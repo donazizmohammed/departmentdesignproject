@@ -1,11 +1,38 @@
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Student {
+    private String FirstName;
+    private String LastName;
+    private int StudentID;
 
-    public void names() throws FileNotFoundException {
+    public String getFirstName() {
+        return this.FirstName;
+    }
+
+    public void setFirstName(String FirstName) {
+        this.FirstName = FirstName;
+    }
+
+    public String getLastName() {
+        return this.LastName;
+    }
+
+    public void setLastName(String LastName) {
+        this.LastName = LastName;
+    }
+
+    public int getStudentID() {
+        return this.StudentID;
+    }
+
+    public void setStudentID(int StudentID) {
+        this.StudentID = StudentID;
+    }
+
+    @Override
+    public String toString(){
+        return "INSERT INTO Students (FirstName, LastName) VALUES ('" + FirstName + "', '" + LastName + "');";
+    }
+       /* old code needs to be unifed with the rest into like a file that handles all inserts
+        public void names() throws FileNotFoundException {
         File input = new File("students.txt");
         try (Scanner scan = new Scanner(input)) {
             while (scan.hasNextLine()) {
@@ -23,6 +50,8 @@ public class Student {
         } catch (FileNotFoundException e) {
             System.err.println("File not found" + e.getLocalizedMessage() + "gl");
         }
-
-    }
+       
+       
+       
+       */
 }
