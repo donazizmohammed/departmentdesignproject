@@ -4,6 +4,36 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Enrollment {
+    private int classID;
+    private int studentID;
+
+    public Enrollment(int classID, int studentID){
+        this.classID = classID;
+        this.studentID = studentID;
+    }
+
+    public int getClassID() {
+        return classID;
+    }
+
+    public void setClassID(int classID) {
+        this.classID = classID;
+    }
+
+    public int getStudentID() {
+        return studentID;
+    }
+
+    public void setStudentID(int studentID) {
+        this.studentID = studentID;
+    }
+
+    @Override
+    public String toString() {
+        return "INSERT INTO Enrollment (classID, studentID) VALUES (foreign key, foreign key);";
+    }
+
+
     
     public void roomandteachInserts() throws FileNotFoundException {
         //list of valid rooms when room is picked for period remove it from the list
