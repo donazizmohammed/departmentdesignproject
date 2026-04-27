@@ -4,7 +4,18 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Course {
+    private int courseID;
+    private String name;
+    private int typeID;
 
+    public Course(String name, int typeID){
+        this.name = name;
+        this.typeID = typeID;
+    }
+    public String toString() {
+        return "INSERT INTO Courses (Name, TypeID) VALUES ('" + parts[0] + "', '" + parts[1] + "');";
+    }
+    
     public void courseInserts() throws FileNotFoundException {
         File input = new File("courses.txt");
         try (Scanner scan = new Scanner(input)) {
