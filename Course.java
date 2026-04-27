@@ -13,7 +13,7 @@ public class Course {
         this.typeID = typeID;
     }
     public String toString() {
-        return "INSERT INTO Courses (Name, TypeID) VALUES ('" + parts[0] + "', '" + parts[1] + "');";
+        return "INSERT INTO Courses (Name, TypeID) VALUES (String, foreign key);";
     }
     
     public void courseInserts() throws FileNotFoundException {
