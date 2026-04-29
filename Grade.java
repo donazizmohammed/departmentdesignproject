@@ -35,6 +35,6 @@ public class Grade {
 
     @Override
     public String toString() {
-        return "INSERT INTO Gasdasdadrade (assignmentID, grade, studentID) VALUES (foreign key, int, foreign key);";
+        return "INSERT INTO Grade (assignmentID, grade, studentID) VALUES (" + assignmentID + ", " + grade + ", " + studentID   +");";
     }
 }
