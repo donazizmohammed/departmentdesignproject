@@ -1,9 +1,9 @@
 public class AssignmentType {
     private int assignmentTypeID;
-    private String assignmentName;
+    private String assignmentTypeName;
 
     public AssignmentType(int assignmentTypeID, String assignmentName){
-        this.assignmentName = assignmentName;
+        this.assignmentTypeName = assignmentName;
         this.assignmentTypeID = assignmentTypeID;
     }
 
@@ -16,14 +16,14 @@ public class AssignmentType {
     }
 
     public String getAssignmentName() {
-        return assignmentName;
+        return assignmentTypeName;
     }
 
     public void setAssignmentName(String assignmentName) {
-        this.assignmentName = assignmentName;
+        this.assignmentTypeName = assignmentName;
     }
 
     public String toString(){
-        return "INSERT INTO AssignmentType (assignmentName) VALUES (varchar(255));";
+        return "INSERT INTO AssignmentType (assignmentName) VALUES (" + assignmentTypeName +");";
     }
 }
