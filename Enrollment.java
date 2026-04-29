@@ -30,7 +30,7 @@ public class Enrollment {
 
     @Override
     public String toString() {
-        return "INSERT INTO Enrollment (classID, studentID) VALUES (foreign key, foreign key);";
+        return "INSERT INTO Enrollment (classID, studentID) VALUES (" + classID + ", " + studentID + ");";
     }
 
 
