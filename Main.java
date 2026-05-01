@@ -13,8 +13,10 @@ public class Main {
         System.out.println(elective);
         System.out.println(regents);
         System.out.println(ap);
+    }
 // attempt at making code that generates student objects from the student.txt file
 // 90% chance this doesnt work but its a start
+public void names () throws FileNotFoundException{
         File input = new File("students.txt");
         try (Scanner scan = new Scanner(input)) {
             while (scan.hasNextLine()) {
@@ -48,8 +50,18 @@ public void courses() throws FileNotFoundException{
             String line = scan.nextLine();
             String[] parts = line.split("\\|", 2);
             String type = parts[1].trim();
-
             System.out.println(type);
+            if(type.equals("AP")){
+                int y = 1;
+            }
+             if(type.equals("Elective")){
+                int y = 2;
+            }
+             if(type.equals("Regents")){
+                int y = 3;
+            }
+
+            Course c = new Course(parts[0], 1);
         }
 
     }
