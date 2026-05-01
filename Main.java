@@ -13,8 +13,7 @@ public class Main {
         System.out.println(elective);
         System.out.println(regents);
         System.out.println(ap);
-// attempt at making code that generates student objects from the student.txt file
-// 90% chance this doesnt work but its a start
+
         File input = new File("students.txt");
         try (Scanner scan = new Scanner(input)) {
             while (scan.hasNextLine()) {
