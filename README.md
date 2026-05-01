@@ -1,5 +1,4 @@
 # departmentdesignproject
-TODO : rewrite everything LOL
-
-
-**Make the toString statements return the insert statement**
+TODO : Write main class for every loop that populates the tables
+TODO : ur mom hahahahahah
+*Every table should have an object* **done**
