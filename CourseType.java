@@ -8,6 +8,7 @@ public class CourseType {
 
     @Override
     public String toString() {
-        return "INSERT INTO CourseType (typeName) VALUES (varchar(255))";
+
+        return "INSERT INTO CourseType (typeName) VALUES (" + typeName + ")";
     }
 }

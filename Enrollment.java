@@ -61,13 +61,13 @@ public class Enrollment {
             }
         }
     }
-    public static void main(String[] args) {
-        try {
-            Enrollment x = new Enrollment();
-            x.roomandteachInserts();
-        } catch (FileNotFoundException e) {
-            System.err.println("File not found" + e.getLocalizedMessage() + "gl");
-        }
-         
-    }
+//    public static void main(String[] args) {
+//        try {
+//            Enrollment x = new Enrollment();
+//            x.roomandteachInserts();
+//        } catch (FileNotFoundException e) {
+//            System.err.println("File not found" + e.getLocalizedMessage() + "gl");
+//        }
+//
+//    }
 }
