@@ -3,6 +3,14 @@ public class CourseType {
     private int typeID;
     private String typeName;
 
+    public String getTypeName() {
+        return this.typeName;
+    }
+
+    public void setTypeName(String typeName) {
+        this.typeName = typeName;
+    }
+
     public CourseType(String typeName){
         this.typeID = count++;
         this.typeName = typeName;

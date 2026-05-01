@@ -8,10 +8,36 @@ public class Course {
     private String name;
     private int typeID;
 
+    public int getCourseID() {
+        return this.courseID;
+    }
+
+    public void setCourseID(int courseID) {
+        this.courseID = courseID;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getTypeID() {
+        return this.typeID;
+    }
+
+    public void setTypeID(int typeID) {
+        this.typeID = typeID;
+    }
+
+
     public Course(String name, int typeID){
         this.name = name;
         this.typeID = typeID;
     }
+    @Override
     public String toString() {
         return "INSERT INTO Courses (Name, TypeID) VALUES (String, foreign key);";
     }

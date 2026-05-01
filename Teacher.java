@@ -3,11 +3,45 @@ public class Teacher {
     private String firstName;
     private String lastName;
     private int departmentID;
+
+    public int getTeacherID() {
+        return this.teacherID;
+    }
+
+    public void setTeacherID(int teacherID) {
+        this.teacherID = teacherID;
+    }
+
+    public String getFirstName() {
+        return this.firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return this.lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public int getDepartmentID() {
+        return this.departmentID;
+    }
+
+    public void setDepartmentID(int departmentID) {
+        this.departmentID = departmentID;
+    }
+
     public Teacher(String firstName, String lastName, int departmentID){
         this.firstName = firstName;
         this.lastName = lastName;
         this.departmentID = departmentID;
     }
+    @Override
     public String toString(){
         return "INSERT INTO Teacher ( FirstName, Lastname, DepartmentID) VALUES ( " + firstName + ", " + lastName + ", " + departmentID + ");";
 

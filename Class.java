@@ -52,6 +52,7 @@ public class Class {
         this.teacher = teacher;
     }
 
+    @Override
     public String toString(){
         return "INSERT INTO Class (courseID, period, room, teacher) VALUES ( " + courseID + ", " + period + ", " + room + ", " + teacher + ");";
     }
