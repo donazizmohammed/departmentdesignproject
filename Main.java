@@ -32,10 +32,7 @@ public class Main {
             while (scan.hasNextLine()) {
                 String line = scan.nextLine();
                 String[] data = line.split(" ");
-                Student student = new Student();
-                student.setFirstName(data[0]);
-                student.setLastName(data[1]);
-
+                Student student = new Student(data[0], data[1]);
             }
         } catch (FileNotFoundException e) {
             System.err.println("File not found" + e.getLocalizedMessage() + "gl");
