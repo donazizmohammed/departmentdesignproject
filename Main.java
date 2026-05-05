@@ -1,6 +1,8 @@
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -20,8 +22,9 @@ public class Main {
             System.err.println("File not found" + e.getLocalizedMessage() + "gl");
         }
     }
-// attempt at making code that generates student objects from the student.txt file
-// 90% chance this doesnt work but its a start
+    // attempt at making code that generates student objects from the student.txt
+    // file
+    // 90% chance this doesnt work but its a start
 
     public void names() throws FileNotFoundException {
         File input = new File("students.txt");
@@ -37,7 +40,8 @@ public class Main {
     }
 
     public void teachers() throws FileNotFoundException {
-        // doesnt work perfectly due to some teachers having middle names but WHO CARES LOL
+        // doesnt work perfectly due to some teachers having middle names but WHO CARES
+        // LOL
         File input = new File("teachers.txt");
         int d = -1;
         try (Scanner scan = new Scanner(input)) {
@@ -104,9 +108,23 @@ public class Main {
                     y = 2;
                 }
                 if (type.equals("Regents")) {
-                     y = 3;
+                    y = 3;
                 }
                 Course c = new Course(parts[0], y);
+            }
+
+        }
+    }
+
+    public void Class() throws FileNotFoundException {
+        File input = new File("teachers.txt");
+        int d = -1;
+        ArrayList<Integer> teacherID1 = new ArrayList<>();
+        ArrayList<Integer> teacherID2 = new ArrayList<>();
+        File input1 = new File("courses.txt");
+        try (Scanner scan = new Scanner(input1)) {
+            while (scan.hasNextLine()) {
+                Class c = new Class();
             }
 
         }
