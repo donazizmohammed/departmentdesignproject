@@ -1,7 +1,14 @@
 public class Student {
+    private static int count = 0;
     private String firstName;
     private String lastName;
     private int studentID;
+
+    public Student(String firstName, String lastName){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        studentID = count++;
+    }
 
     public String getFirstName() {
         return this.firstName;
@@ -26,6 +33,8 @@ public class Student {
     public void setStudentID(int studentID) {
         this.studentID = studentID;
     }
+
+
 
     @Override
     public String toString(){
