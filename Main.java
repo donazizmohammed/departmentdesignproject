@@ -90,6 +90,16 @@ public class Main {
         }
     }
 
+    public void department() throws FileNotFoundException {
+        File input = new File("Department.txt");
+        try (Scanner scan = new Scanner(input)){
+            while (scan.hasNextLine()){
+                String dept = scan.nextLine();
+                Department department = new Department(dept);
+            }
+        }
+    }
+
     public void courses() throws FileNotFoundException {
         int y = -1;
         File input = new File("courses.txt");
