@@ -2,7 +2,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -118,9 +117,18 @@ public class Main {
 
     public void Class() throws FileNotFoundException {
         File input = new File("teachers.txt");
-        int d = -1;
         ArrayList<Integer> teacherID1 = new ArrayList<>();
         ArrayList<Integer> teacherID2 = new ArrayList<>();
+        ArrayList<String> room = new ArrayList<>();
+        File rooms = new File("rooms.txt");
+        try (Scanner roomz = new Scanner(rooms)) {
+            while (roomz.hasNextLine()) {
+                String line =  roomz.nextLine();
+                room.add(line);
+            }
+        } catch (FileNotFoundException e) {
+            System.err.println("File not found" + e.getLocalizedMessage() + "gl");
+        }
         File input1 = new File("courses.txt");
         try (Scanner scan = new Scanner(input1)) {
             while (scan.hasNextLine()) {
