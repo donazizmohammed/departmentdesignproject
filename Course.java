@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Course {
+    private static int count = 0;
     private int courseID;
     private String name;
     private int typeID;
@@ -36,6 +37,7 @@ public class Course {
     public Course(String name, int typeID){
         this.name = name;
         this.typeID = typeID;
+        courseID = count++;
     }
     @Override
     public String toString() {
