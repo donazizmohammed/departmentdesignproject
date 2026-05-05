@@ -1,4 +1,5 @@
 public class Teacher {
+    private static int count = 0;
     private int teacherID;
     private String firstName;
     private String lastName;
@@ -40,6 +41,7 @@ public class Teacher {
         this.firstName = firstName;
         this.lastName = lastName;
         this.departmentID = departmentID;
+        teacherID = count++;
     }
     @Override
     public String toString(){

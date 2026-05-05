@@ -1,10 +1,11 @@
 public class AssignmentType {
+    private static int count = 0;
     private int assignmentTypeID;
     private String assignmentTypeName;
 
-    public AssignmentType(int assignmentTypeID, String assignmentName){
+    public AssignmentType(String assignmentName){
         this.assignmentTypeName = assignmentName;
-        this.assignmentTypeID = assignmentTypeID;
+        this.assignmentTypeID = count++;
     }
 
     public int getAssignmentTypeID() {
