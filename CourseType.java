@@ -1,5 +1,5 @@
 public class CourseType {
-    private static int count = 0;
+    private static int count = 1;
     private int typeID;
 
     public int getTypeID() {

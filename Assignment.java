@@ -1,5 +1,5 @@
 public class Assignment {
-    private static int count = 0;
+    private static int count = 1;
     private int assignmentID;
     private String assignmentName;
     private int assignmentTypeID;

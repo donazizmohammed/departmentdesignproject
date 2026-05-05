@@ -1,0 +1,92 @@
+Anatomy | Elective
+AP Biology | AP
+AP Environmental | AP
+AP Psychology | AP
+Bioorganic Chemistry | Elective
+Genetics | Elective
+Introduction to Neuroscience | Elective
+Living Environment | Regents
+Living Environment Lab | Regents
+Environmental Sustainability | Elective
+Regents Chemistry | Regents
+AP Chemistry | AP
+Chemical Engineering | Elective
+Organic Chemistry | Elective
+MICA | Elective
+Quantitative Analysis | Elective
+Forensics | Elective
+Regents Physics | Regents
+Regents Physics Labs | Regents
+AP Physics 1 | AP
+AP Physics 2 | AP
+AP Physics C (Mechanics) | AP
+AP Physics C (E/M) | AP
+Astronomy | Elective
+Modern Physics | Elective
+Common Core Algebra | Regents
+Common Core Geometry | Regents
+Common Core Algebra II | Regents
+Pre-Calculus | Elective
+Calculus (non-AP) | Elective
+AP Calculus (AB) | AP
+AP Calculus (BC) | AP
+AP Statistics | AP
+Multivariable Calculus | Elective
+Math Research | Elective
+Linear Algebra | Elective
+AP Computer Science Principles | AP
+AP Computer Science A | AP
+Big Data: Warehousing & Analytics | Elective
+Cyber Security | Elective
+Digital Electronics | Elective
+Digital Systems Design | Elective
+Fundamentals of IT Infrastructure | Elective
+Green Building Construction | Elective
+PLTW EDD | Elective
+Physical Education | Elective
+Health Education | Elective
+9th Grade English | Regents
+10th Grade English | Regents
+10th Grade: AP Capstone Seminar | AP
+11th Grade English | Regents
+AP English Language & Composition | AP
+AP Capstone Research | AP
+1AP English Literature & Composition | AP
+Drama | Elective
+Creative Writing | Elective
+Film & Literature | Elective
+Graphic Novels | Elective
+Journalism | Elective
+Life, Love & Death | Elective
+Mystery, Horror & the Supernatural | Elective
+Science Fiction & Fantasy | Elective
+Yearbook | Elective
+The Survey | Elective
+Cultural Anthropology | Elective
+Dollars and Sense | Elective
+Economics | Elective
+Participation in Government | Elective
+Physical Anthropology | Elective
+Sociology | Elective
+9th Grade Global | Regents
+10th Grade Regents Global History | Regents
+11th Grade Regents American History | Regents
+AP American History | AP
+AP Comparative Government | AP
+AP European History | AP
+AP Human Geography | AP
+AP Macroeconomics | AP
+AP Microeconomics | AP
+AP US Government | AP
+AP World History | AP
+Chinese | Regents
+AP Chinese Language and Culture | AP
+French | Regents
+AP French Language and Culture | AP
+German | Regents
+AP German Language and Culture | AP
+Italian | Regents
+AP Italian Language and Culture | AP
+Spanish | Regents
+AP Spanish Language and Culture | AP
+AP Spanish Literature and Culture | AP

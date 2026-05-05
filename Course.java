@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Course {
-    private static int count = 0;
+    private static int count = 1;
     private int courseID;
     private String name;
     private int typeID;

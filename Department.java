@@ -1,5 +1,5 @@
 public class Department {
-    private static int count = 0;
+    private static int count = 1;
     private int departmentID;
     private String departmentName;
 
