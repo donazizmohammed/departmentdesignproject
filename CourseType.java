@@ -1,6 +1,14 @@
 public class CourseType {
     private static int count = 0;
     private int typeID;
+
+    public int getTypeID() {
+        return this.typeID;
+    }
+
+    public void setTypeID(int typeID) {
+        this.typeID = typeID;
+    }
     private String typeName;
 
     public String getTypeName() {
