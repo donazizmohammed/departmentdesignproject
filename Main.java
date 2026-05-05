@@ -115,20 +115,23 @@ public class Main {
         }
     }
 
-    public void Class() throws FileNotFoundException {
-        File input = new File("teachers.txt");
-        ArrayList<Integer> teacherID1 = new ArrayList<>();
-        ArrayList<Integer> teacherID2 = new ArrayList<>();
-        ArrayList<String> room = new ArrayList<>();
+    public void rooms(ArrayList<String> x) throws FileNotFoundException {
         File rooms = new File("rooms.txt");
         try (Scanner roomz = new Scanner(rooms)) {
             while (roomz.hasNextLine()) {
-                String line =  roomz.nextLine();
-                room.add(line);
+                String line = roomz.nextLine();
+                x.add(line);
             }
         } catch (FileNotFoundException e) {
             System.err.println("File not found" + e.getLocalizedMessage() + "gl");
         }
+    }
+
+    public void Class() throws FileNotFoundException {
+        File input = new File("teachers.txt");
+        ArrayList<Integer> teacherID1 = new ArrayList<>();
+        ArrayList<Integer> teacherID2 = new ArrayList<>();
+
         File input1 = new File("courses.txt");
         try (Scanner scan = new Scanner(input1)) {
             while (scan.hasNextLine()) {
