@@ -91,6 +91,7 @@ public class Main {
     }
 
     public void courses() throws FileNotFoundException {
+        int y = -1;
         File input = new File("courses.txt");
         try (Scanner scan = new Scanner(input)) {
             while (scan.hasNextLine()) {
@@ -100,16 +101,15 @@ public class Main {
                 String type = parts[1].trim();
                 System.out.println(type);
                 if (type.equals("AP")) {
-                    int y = 1;
+                    y = 1;
                 }
                 if (type.equals("Elective")) {
-                    int y = 2;
+                    y = 2;
                 }
                 if (type.equals("Regents")) {
-                    int y = 3;
+                     y = 3;
                 }
-
-                Course c = new Course(parts[0], 1);
+                Course c = new Course(parts[0], y);
             }
 
         }
