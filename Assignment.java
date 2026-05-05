@@ -1,4 +1,5 @@
 public class Assignment {
+    private static int count = 0;
     private int assignmentID;
     private String assignmentName;
     private int assignmentTypeID;
@@ -33,7 +34,7 @@ public class Assignment {
         assignmentName = name;
         assignmentTypeID = typeID;
         courseID = cID;
-
+        assignmentTypeID = count++;
     }
     @Override
     public String toString(){
