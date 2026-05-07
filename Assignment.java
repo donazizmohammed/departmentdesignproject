@@ -26,7 +26,7 @@ public class Assignment {
     }
 
     public void setClassID(int courseID) {
-        this.courseID = classID;
+        this.classID = classID;
     }
 
 
