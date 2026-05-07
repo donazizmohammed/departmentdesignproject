@@ -17,7 +17,6 @@ public class Main {
         try {
             Main x = new Main();
             x.courses();
-            x.department();
         } catch (FileNotFoundException e) {
             System.err.println("File not found" + e.getLocalizedMessage() + "gl");
         }
@@ -93,8 +92,8 @@ public class Main {
 
     public void department() throws FileNotFoundException {
         File input = new File("Department.txt");
-        try (Scanner scan = new Scanner(input)){
-            while (scan.hasNextLine()){
+        try (Scanner scan = new Scanner(input)) {
+            while (scan.hasNextLine()) {
                 String dept = scan.nextLine();
                 Department department = new Department(dept);
             }
@@ -139,14 +138,36 @@ public class Main {
     }
 
     public void Class() throws FileNotFoundException {
-        File input = new File("teachers.txt");
-        ArrayList<Integer> teacherID1 = new ArrayList<>();
-        ArrayList<Integer> teacherID2 = new ArrayList<>();
-
+        ArrayList<Integer> teacherIDList = new ArrayList<>();
+        ArrayList<Integer> courseIDList = new ArrayList<>();
+        ArrayList<String> roomList = new ArrayList<>();
+        rooms(roomList);
+        ArrayList<ArrayList<Integer>> teacherList = new ArrayList<>(); // to store the teacherID and the period they're occupied
+        for (int i = 1; i <= 301; i++) {
+            teacherIDList.add(i);
+        }
+        for (int i = 1; i <= 92; i++) {
+            courseIDList.add(i);
+        }
         File input1 = new File("courses.txt");
         try (Scanner scan = new Scanner(input1)) {
             while (scan.hasNextLine()) {
-//                Class c = new Class(); 
+                int coursetimes = (int) (Math.random() * 5) + 1;
+                // coursetimes to determine how many classes this course will be taught (has to be 1-5)
+                for (int z = 1; z <= coursetimes; z++) {
+                    int teacherID = -1;
+                    int courseID = -1;
+                    String room = " ";
+                    int period = (int) (Math.random() * 10) + 1; // determine the period
+                    if (!teacherIDList.isEmpty()) {
+                        teacherID = teacherIDList.get((int) (Math.random() * teacherIDList.size())); // random teach
+                        courseID = courseIDList.get((int) (Math.random() * courseIDList.size())); // random course
+                        room = roomList.get((int) (Math.random() * roomList.size())); // random room
+                        Klass k = new Klass(courseID, period, room, teacherID);
+                    }
+
+                }
+
             }
 
         }
