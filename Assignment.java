@@ -22,11 +22,11 @@ public class Assignment {
     }
 
     public int getClassID() {
-        return this.courseID;
+        return this.classID;
     }
 
     public void setClassID(int courseID) {
-        this.courseID = courseID;
+        this.courseID = classID;
     }
 
 
