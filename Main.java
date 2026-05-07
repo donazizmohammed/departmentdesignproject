@@ -146,7 +146,7 @@ public class Main {
         File input1 = new File("courses.txt");
         try (Scanner scan = new Scanner(input1)) {
             while (scan.hasNextLine()) {
-//                Class c = new Class();
+//                Class c = new Class(); 
             }
 
         }
