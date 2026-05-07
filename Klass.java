@@ -1,4 +1,4 @@
-public class Class {
+public class Klass {
     private static int count = 0;
     private int classID;
     private int courseID;
@@ -46,7 +46,7 @@ public class Class {
         this.teacher = teacher;
     }
 
-    public Class(int courseID, int period, String room, int teacher){
+    public Klass(int courseID, int period, String room, int teacher){
         classID = count;
         this.courseID = courseID;
         this.period = period;

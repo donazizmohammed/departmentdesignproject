@@ -138,15 +138,16 @@ public class Main {
     }
 
     public void Class() throws FileNotFoundException {
-
-        File input = new File("teachers.txt");
-        int d = -1;
-        ArrayList<Integer> teacherID1 = new ArrayList<>();
-        ArrayList<Integer> teacherID2 = new ArrayList<>();
+        ArrayList<Integer> teacherIDList = new ArrayList<>();
+        ArrayList<Integer> courseIDList = new ArrayList<>();
+        ArrayList<String> roomList = new ArrayList<>();
+        rooms(roomList);
         ArrayList<ArrayList<Integer>> teacherList = new ArrayList<>(); // to store the teacherID and the period they're occupied
         for (int i = 1; i <= 301; i++) {
-            teacherID1.add(i);
-            teacherID2.add(i);
+            teacherIDList.add(i);
+        }
+        for (int i = 1; i <= 92; i++) {
+            courseIDList.add(i);
         }
         File input1 = new File("courses.txt");
         try (Scanner scan = new Scanner(input1)) {
@@ -154,31 +155,15 @@ public class Main {
                 int coursetimes = (int) (Math.random() * 5) + 1;
                 // coursetimes to determine how many classes this course will be taught (has to be 1-5)
                 for (int z = 1; z <= coursetimes; z++) {
-                    int teacherID = 0;
+                    int teacherID = -1;
+                    int courseID = -1;
+                    String room = " ";
                     int period = (int) (Math.random() * 10) + 1; // determine the period
-                    if (teacherID1.size() > 0) {
-                        teacherID = (int) (Math.random() * teacherID1.size());
-                        teacherID = teacherID1.get(teacherID);
-                        // teacherID generate all possible indexes of TeacherID1 then sets it to the value of the index, which is just index + 1
-                        ArrayList<Integer> innerList = new ArrayList<>();
-                        innerList.add(teacherID);
-                        innerList.add(period);
-                        teacherList.add(innerList); // adds the list with teacher and period into teacherList
-                        teacherID1.remove(teacherID - 1); // the index of teacherID will be teacherID - 1
-                    } else {
-                        // if it gets to using the second teacher list then you have to do checking now with the teacherList
-                        boolean isvalidTeacherID = true;
-                        while (isvalidTeacherID) {
-                            teacherID = (int) (Math.random() * teacherID2.size());
-                            for (int i = 0; i < teacherList.size(); i++) {
-                                if (teacherList.get(i).get(0) == teacherID) {
-                                    if (teacherList.get(i).get(1) == period) {
-
-                                    }
-                                }
-                            }
-
-                        }
+                    if (!teacherIDList.isEmpty()) {
+                        teacherID = teacherIDList.get((int) (Math.random() * teacherIDList.size())); // random teach
+                        courseID = courseIDList.get((int) (Math.random() * courseIDList.size())); // random course
+                        room = roomList.get((int) (Math.random() * roomList.size())); // random room
+                        Klass k = new Klass(courseID, period, room, teacherID);
                     }
 
                 }
