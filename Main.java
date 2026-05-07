@@ -17,6 +17,7 @@ public class Main {
         try {
             Main x = new Main();
             x.courses();
+            x.department();
         } catch (FileNotFoundException e) {
             System.err.println("File not found" + e.getLocalizedMessage() + "gl");
         }
@@ -145,7 +146,7 @@ public class Main {
         File input1 = new File("courses.txt");
         try (Scanner scan = new Scanner(input1)) {
             while (scan.hasNextLine()) {
-                Class c = new Class();
+//                Class c = new Class();
             }
 
         }
