@@ -168,27 +168,25 @@ public class Main {
                 room = roomListCopy.get((int) (Math.random() * roomListCopy.size())); // random room
 
                 Klass k = new Klass(courseID, period, room, teacherID);
+                teacherIDListCopy.remove(teacherIDListCopy.indexOf(teacherID));
                 if (!courseIDListCopy.isEmpty()) {
                     courseIDListCopy.remove(courseIDListCopy.indexOf(courseID));
-
-                    teacherIDListCopy.remove(teacherIDListCopy.indexOf(teacherID));
-
-                    if (!roomListCopy.isEmpty()) {
-
-                        roomListCopy.remove(roomListCopy.indexOf(room));
-
-                    } else {
-                        roomListCopy = new ArrayList<>(roomList);
-                    }
-
                 } else {
                     courseIDListCopy = new ArrayList<>(courseIDList);
+                }
+                if (!roomListCopy.isEmpty()) {
 
+                    roomListCopy.remove(roomListCopy.indexOf(room));
+
+                } else {
+                    roomListCopy = new ArrayList<>(roomList);
                 }
 
             }
-        }
 
+        }
     }
 
 }
+
+
