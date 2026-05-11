@@ -42,6 +42,25 @@ public class Main {
         }
     }
 
+    public ArrayList<Enrollment> enrolls() {
+        ArrayList<Enrollment> EnrollmentList = new ArrayList<>();
+        ArrayList<Integer> courseIDList = new ArrayList<>();
+        ArrayList<Integer> studentIDList = new ArrayList<>();
+        for (int i = 1; i <= 5000; i++) {
+            studentIDList.add(i);
+        }
+        for (int i = 1; i <= 92; i++) {
+            courseIDList.add(i);
+        }
+        for (Integer course : courseIDList) {
+            int x = (int) (Math.random()*30) + 20; // amount of students
+            for (int i = 0; i <= x; i++) {
+            EnrollmentList.add(new Enrollment(course, studentIDList.get((int) (Math.random() * studentIDList.size()))));
+            }
+        }
+        return EnrollmentList;
+    }
+
     public void teachers() throws FileNotFoundException {
         // doesnt work perfectly due to some teachers having middle names but WHO CARES
         // LOL
@@ -193,5 +212,3 @@ public class Main {
     }
 
 }
-
-
