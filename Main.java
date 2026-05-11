@@ -14,13 +14,13 @@ public class Main {
         // System.out.println(elective);
         // System.out.println(regents);
         // System.out.println(ap);
-
         ArrayList<Student> studentList = new ArrayList<>(); // Arraylist to store all students
         ArrayList<Teacher> teacherList = new ArrayList<>(); // Arraylist to store all teachers
         ArrayList<Course> courseList = new ArrayList<>(); // Arratlist to store all courses
         ArrayList<String> differentRooms = new ArrayList<>(); // Arraylist to store all rooms
         ArrayList<Department> departmentList = new ArrayList<>(); // Arraylist to store all departments
-       
+        ArrayList<Enrollment> enrollmentList = new ArrayList<>(); // you get it by now
+
         try {
 
             Main x = new Main();
@@ -29,6 +29,7 @@ public class Main {
             x.courses(courseList);
             x.rooms(differentRooms);
             x.department(departmentList);
+            x.enrolls(enrollmentList);
 
         } catch (FileNotFoundException e) {
             System.err.println("File not found" + e.getLocalizedMessage() + "gl");
@@ -55,8 +56,7 @@ public class Main {
         }
     }
 
-    public ArrayList<Enrollment> enrolls() {
-        ArrayList<Enrollment> EnrollmentList = new ArrayList<>();
+    public ArrayList<Enrollment> enrolls(ArrayList<Enrollment> y) {
         ArrayList<Integer> courseIDList = new ArrayList<>();
         ArrayList<Integer> studentIDList = new ArrayList<>();
         for (int i = 1; i <= 5000; i++) {
@@ -66,12 +66,12 @@ public class Main {
             courseIDList.add(i);
         }
         for (Integer course : courseIDList) {
-            int x = (int) (Math.random()*30) + 20; // amount of students
+            int x = (int) (Math.random() * 30) + 20; // amount of students
             for (int i = 0; i <= x; i++) {
-            EnrollmentList.add(new Enrollment(course, studentIDList.get((int) (Math.random() * studentIDList.size()))));
+                y.add(new Enrollment(course, studentIDList.get((int) (Math.random() * studentIDList.size()))));
             }
         }
-        return EnrollmentList;
+        return y;
     }
 
     public void teachers(ArrayList<Teacher> teacherList) throws FileNotFoundException {
