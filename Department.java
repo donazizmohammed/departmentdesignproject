@@ -31,4 +31,8 @@ public class Department {
         departmentID = count++;
         this.departmentName = departmentName;
     }
+    
+    public String toString() {
+        return "INSERT INTO Departments (DepartmentName) VALUES ( " + departmentName + ");";
+    }
 }
