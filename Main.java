@@ -14,12 +14,16 @@ public class Main {
         System.out.println(elective);
         System.out.println(regents);
         System.out.println(ap);
+        ArrayList<Course> courses = new ArrayList<>(); // Arratlist to store all courses
         try {
             Main x = new Main();
-            x.courses();
+            x.courses(courses);
         } catch (FileNotFoundException e) {
             System.err.println("File not found" + e.getLocalizedMessage() + "gl");
         }
+        // for (Course i : courses){
+        //     System.out.println(i);
+        // } Printing for all the courses, toString statements will auto print the INSERT statements
     }
     // attempt at making code that generates student objects from the student.txt
     // file
@@ -100,7 +104,7 @@ public class Main {
         }
     }
 
-    public void courses() throws FileNotFoundException {
+    public void courses(ArrayList<Course> courses) throws FileNotFoundException {
         int y = -1;
         File input = new File("courses.txt");
         try (Scanner scan = new Scanner(input)) {
@@ -119,6 +123,7 @@ public class Main {
                     y = 3;
                 }
                 Course c = new Course(parts[0], y);
+                courses.add(c);
             }
 
         }

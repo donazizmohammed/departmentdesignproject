@@ -41,7 +41,7 @@ public class Course {
     }
     @Override
     public String toString() {
-        return "INSERT INTO Courses (Name, TypeID) VALUES (String, foreign key);";
+        return "INSERT INTO Courses (Name, TypeID) VALUES (" + name + ", " + typeID + ");";
     }
     
     public void courseInserts() throws FileNotFoundException {
