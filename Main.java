@@ -141,6 +141,7 @@ public class Main {
         ArrayList<Integer> teacherIDList = new ArrayList<>();
         ArrayList<Integer> courseIDList = new ArrayList<>();
         ArrayList<String> roomList = new ArrayList<>();
+
         rooms(roomList);
         ArrayList<ArrayList<Integer>> teacherList = new ArrayList<>(); // to store the teacherID and the period they're occupied
         for (int i = 1; i <= 301; i++) {
@@ -149,21 +150,43 @@ public class Main {
         for (int i = 1; i <= 92; i++) {
             courseIDList.add(i);
         }
+        ArrayList<Integer> teacherIDListCopy = new ArrayList<>(teacherIDList);
+        ArrayList<Integer> courseIDListCopy = new ArrayList<>(courseIDList);
+        ArrayList<String> roomListCopy = new ArrayList<>(roomList);
         int coursetimes = (int) (Math.random() * 5) + 1;
-        // coursetimes to determine how many classes this course will be taught (has to be 1-5)
+        // coursetimes to determine how many classes this course will be taught (has to
+        // be 1-5)
         for (int z = 1; z <= coursetimes; z++) {
             int teacherID = -1;
             int courseID = -1;
             String room = " ";
             int period = (int) (Math.random() * 10) + 1; // determine the period
-            if (!teacherIDList.isEmpty()) {
-                teacherID = teacherIDList.get((int) (Math.random() * teacherIDList.size())); // random teach
-                courseID = courseIDList.get((int) (Math.random() * courseIDList.size())); // random course
-                room = roomList.get((int) (Math.random() * roomList.size())); // random room
+            if (!teacherIDListCopy.isEmpty()) {
+                teacherID = teacherIDListCopy.get((int) (Math.random() * teacherIDListCopy.size()));// random teach
+
+                courseID = courseIDListCopy.get((int) (Math.random() * courseIDListCopy.size())); // random course
+
+                room = roomListCopy.get((int) (Math.random() * roomListCopy.size())); // random room
+
                 Klass k = new Klass(courseID, period, room, teacherID);
-                courseIDList.remove(courseIDList.indexOf(courseID));
-                teacherIDList.remove(teacherIDList.indexOf(teacherID));
-                roomList.remove(roomList.indexOf(room));
+                if (!courseIDListCopy.isEmpty()) {
+                    courseIDListCopy.remove(courseIDListCopy.indexOf(courseID));
+
+                    teacherIDListCopy.remove(teacherIDListCopy.indexOf(teacherID));
+
+                    if (!roomListCopy.isEmpty()) {
+
+                        roomListCopy.remove(roomListCopy.indexOf(room));
+
+                    } else {
+                        roomListCopy = new ArrayList<>(roomList);
+                    }
+
+                } else {
+                    courseIDListCopy = new ArrayList<>(courseIDList);
+
+                }
+
             }
         }
 
