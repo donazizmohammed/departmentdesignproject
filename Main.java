@@ -15,13 +15,20 @@ public class Main {
         // System.out.println(regents);
         // System.out.println(ap);
 
-        ArrayList<Course> courses = new ArrayList<>(); // Arratlist to store all courses
-        ArrayList<String> rooms = new ArrayList<>(); // Arraylist to store all rooms
+        ArrayList<Student> studentList = new ArrayList<>(); // Arraylist to store all students
+        ArrayList<Teacher> teacherList = new ArrayList<>(); // Arraylist to store all teachers
+        ArrayList<Course> courseList = new ArrayList<>(); // Arratlist to store all courses
+        ArrayList<String> differentRooms = new ArrayList<>(); // Arraylist to store all rooms
+        ArrayList<Department> departmentList = new ArrayList<>(); // Arraylist to store all departments
        
         try {
+
             Main x = new Main();
-            x.courses(courses);
-            x.rooms(rooms);
+            x.names(studentList);
+            x.teachers(teacherList);
+            x.courses(courseList);
+            x.rooms(differentRooms);
+            x.department(departmentList);
 
         } catch (FileNotFoundException e) {
             System.err.println("File not found" + e.getLocalizedMessage() + "gl");
@@ -34,20 +41,21 @@ public class Main {
     // file
     // 90% chance this doesnt work but its a start
 
-    public void names() throws FileNotFoundException {
+    public void names(ArrayList<Student> studentList) throws FileNotFoundException {
         File input = new File("students.txt");
         try (Scanner scan = new Scanner(input)) {
             while (scan.hasNextLine()) {
                 String line = scan.nextLine();
                 String[] data = line.split(" ");
                 Student student = new Student(data[0], data[1]);
+                studentList.add(student);
             }
         } catch (FileNotFoundException e) {
             System.err.println("File not found" + e.getLocalizedMessage() + "gl");
         }
     }
 
-    public void teachers() throws FileNotFoundException {
+    public void teachers(ArrayList<Teacher> teacherList) throws FileNotFoundException {
         // doesnt work perfectly due to some teachers having middle names but WHO CARES
         // LOL
         File input = new File("teachers.txt");
@@ -94,22 +102,23 @@ public class Main {
                     d = 10;
                 }
                 Teacher teach = new Teacher(firstName, lastName, d);
-
+                teacherList.add(teach);
             }
         }
     }
 
-    public void department() throws FileNotFoundException {
+    public void department(ArrayList<Department> departmentList) throws FileNotFoundException {
         File input = new File("Department.txt");
         try (Scanner scan = new Scanner(input)) {
             while (scan.hasNextLine()) {
                 String dept = scan.nextLine();
                 Department department = new Department(dept);
+                departmentList.add(department);
             }
         }
     }
 
-    public void courses(ArrayList<Course> courses) throws FileNotFoundException {
+    public void courses(ArrayList<Course> courseList) throws FileNotFoundException {
         int y = -1;
         File input = new File("courses.txt");
         try (Scanner scan = new Scanner(input)) {
@@ -128,18 +137,18 @@ public class Main {
                     y = 3;
                 }
                 Course c = new Course(parts[0], y);
-                courses.add(c);
+                courseList.add(c);
             }
 
         }
     }
 
-    public void rooms(ArrayList<String> x) throws FileNotFoundException {
+    public void rooms(ArrayList<String> differentRooms) throws FileNotFoundException {
         File rooms = new File("rooms.txt");
         try (Scanner roomz = new Scanner(rooms)) {
             while (roomz.hasNextLine()) {
-                String line = roomz.nextLine();
-                x.add(line);
+                String room = roomz.nextLine();
+                differentRooms.add(room);
             }
         } catch (FileNotFoundException e) {
             System.err.println("File not found" + e.getLocalizedMessage() + "gl");
