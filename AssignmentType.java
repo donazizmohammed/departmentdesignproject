@@ -24,6 +24,7 @@ public class AssignmentType {
         this.assignmentTypeName = assignmentName;
     }
 
+    @Override
     public String toString(){
         return "INSERT INTO AssignmentType (assignmentName) VALUES (" + assignmentTypeName +");";
     }
