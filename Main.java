@@ -34,9 +34,20 @@ public class Main {
         } catch (FileNotFoundException e) {
             System.err.println("File not found" + e.getLocalizedMessage() + "gl");
         }
-        // for (Course i : courses){
+        // for (Course i : courseList){
         //     System.out.println(i);
-        // } Printing for all the courses, toString statements will auto print the INSERT statements
+        // } 
+        // for (Student i : studentList){
+        //     System.out.println(i);
+        // }
+        // for (Teacher i : teacherList){
+        //     System.out.println(i);
+        // }
+        // for (Department i : departmentList){
+        //     System.out.println(i);
+        // }
+
+        // Printing for all the tables, toString statements will auto print the INSERT statements
     }
     // attempt at making code that generates student objects from the student.txt
     // file
