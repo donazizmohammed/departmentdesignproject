@@ -109,7 +109,6 @@ public class Main {
                 String line = scan.nextLine();
                 String[] parts = line.split("\\|", 2);
                 String type = parts[1].trim();
-                System.out.println(type);
                 if (type.equals("AP")) {
                     y = 1;
                 }
