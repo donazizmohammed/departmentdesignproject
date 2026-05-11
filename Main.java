@@ -7,17 +7,22 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        CourseType elective = new CourseType("Elective");
+        CourseType elective = new CourseType("Elective"); // CourseType hard code population
         CourseType regents = new CourseType("Regents");
         CourseType ap = new CourseType("AP");
 
-        System.out.println(elective);
-        System.out.println(regents);
-        System.out.println(ap);
+        // System.out.println(elective);
+        // System.out.println(regents);
+        // System.out.println(ap);
+
         ArrayList<Course> courses = new ArrayList<>(); // Arratlist to store all courses
+        ArrayList<String> rooms = new ArrayList<>(); // Arraylist to store all rooms
+       
         try {
             Main x = new Main();
             x.courses(courses);
+            x.rooms(rooms);
+
         } catch (FileNotFoundException e) {
             System.err.println("File not found" + e.getLocalizedMessage() + "gl");
         }
@@ -192,23 +197,27 @@ public class Main {
                 room = roomListCopy.get((int) (Math.random() * roomListCopy.size())); // random room
 
                 Klass k = new Klass(courseID, period, room, teacherID);
-                teacherIDListCopy.remove(teacherIDListCopy.indexOf(teacherID));
                 if (!courseIDListCopy.isEmpty()) {
                     courseIDListCopy.remove(courseIDListCopy.indexOf(courseID));
+
+                    teacherIDListCopy.remove(teacherIDListCopy.indexOf(teacherID));
+
+                    if (!roomListCopy.isEmpty()) {
+
+                        roomListCopy.remove(roomListCopy.indexOf(room));
+
+                    } else {
+                        roomListCopy = new ArrayList<>(roomList);
+                    }
+
                 } else {
                     courseIDListCopy = new ArrayList<>(courseIDList);
-                }
-                if (!roomListCopy.isEmpty()) {
 
-                    roomListCopy.remove(roomListCopy.indexOf(room));
-
-                } else {
-                    roomListCopy = new ArrayList<>(roomList);
                 }
 
             }
-
         }
+
     }
 
 }
