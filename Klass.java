@@ -47,7 +47,7 @@ public class Klass {
     }
 
     public Klass(int courseID, int period, String room, int teacher){
-        classID = count;
+        classID = count++;
         this.courseID = courseID;
         this.period = period;
         this.room = room;
