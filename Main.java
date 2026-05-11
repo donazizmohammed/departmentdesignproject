@@ -77,7 +77,7 @@ public class Main {
             courseIDList.add(i);
         }
         for (Integer course : courseIDList) {
-            int x = (int) (Math.random() * 30) + 20; // amount of students
+            int x = (int) (Math.random() * 10 ) + 20; // amount of students
             for (int i = 0; i <= x; i++) {
                 y.add(new Enrollment(course, studentIDList.get((int) (Math.random() * studentIDList.size()))));
             }
