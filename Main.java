@@ -35,19 +35,20 @@ public class Main {
             System.err.println("File not found" + e.getLocalizedMessage() + "gl");
         }
         // for (Course i : courseList){
-        //     System.out.println(i);
-        // } 
+        // System.out.println(i);
+        // }
         // for (Student i : studentList){
-        //     System.out.println(i);
+        // System.out.println(i);
         // }
         // for (Teacher i : teacherList){
-        //     System.out.println(i);
+        // System.out.println(i);
         // }
         // for (Department i : departmentList){
-        //     System.out.println(i);
+        // System.out.println(i);
         // }
 
-        // Printing for all the tables, toString statements will auto print the INSERT statements
+        // Printing for all the tables, toString statements will auto print the INSERT
+        // statements
     }
     // attempt at making code that generates student objects from the student.txt
     // file
@@ -77,7 +78,7 @@ public class Main {
             courseIDList.add(i);
         }
         for (Integer course : courseIDList) {
-            int x = (int) (Math.random() * 10 ) + 20; // amount of students
+            int x = (int) (Math.random() * 10) + 20; // amount of students
             for (int i = 0; i <= x; i++) {
                 y.add(new Enrollment(course, studentIDList.get((int) (Math.random() * studentIDList.size()))));
             }
@@ -189,9 +190,11 @@ public class Main {
         ArrayList<Integer> teacherIDList = new ArrayList<>();
         ArrayList<Integer> courseIDList = new ArrayList<>();
         ArrayList<String> roomList = new ArrayList<>();
+        ArrayList<Klass> klassList = new ArrayList<>();
 
         rooms(roomList);
-        ArrayList<ArrayList<Integer>> teacherList = new ArrayList<>(); // to store the teacherID and the period they're occupied
+        ArrayList<ArrayList<Integer>> teacherList = new ArrayList<>(); // to store the teacherID and the period they're
+                                                                       // occupied
         for (int i = 1; i <= 301; i++) {
             teacherIDList.add(i);
         }
@@ -201,25 +204,24 @@ public class Main {
         ArrayList<Integer> teacherIDListCopy = new ArrayList<>(teacherIDList);
         ArrayList<Integer> courseIDListCopy = new ArrayList<>(courseIDList);
         ArrayList<String> roomListCopy = new ArrayList<>(roomList);
-        int coursetimes = (int) (Math.random() * 5) + 1;
         // coursetimes to determine how many classes this course will be taught (has to
         // be 1-5)
-        for (int z = 1; z <= coursetimes; z++) {
-            int teacherID = -1;
-            int courseID = -1;
-            String room = " ";
-            int period = (int) (Math.random() * 10) + 1; // determine the period
-            if (!teacherIDListCopy.isEmpty()) {
-                teacherID = teacherIDListCopy.get((int) (Math.random() * teacherIDListCopy.size()));// random teach
+        for (int q = 1; q < courseIDList.size(); q++) {
+            int coursetimes = (int) (Math.random() * 5) + 1;
+            for (int z = 1; z <= coursetimes; z++) {
+                int teacherID = -1;
+                int courseID = -1;
+                String room = " ";
+                int period = (int) (Math.random() * 10) + 1; // determine the period
+                if (!teacherIDListCopy.isEmpty()) {
+                    teacherID = teacherIDListCopy.get((int) (Math.random() * teacherIDListCopy.size()));// random teach
 
-                courseID = courseIDListCopy.get((int) (Math.random() * courseIDListCopy.size())); // random course
+                    courseID = q;
 
-                room = roomListCopy.get((int) (Math.random() * roomListCopy.size())); // random room
+                    room = roomListCopy.get((int) (Math.random() * roomListCopy.size())); // random room
 
-                Klass k = new Klass(courseID, period, room, teacherID);
-                if (!courseIDListCopy.isEmpty()) {
-                    courseIDListCopy.remove(courseIDListCopy.indexOf(courseID));
-
+                    Klass k = new Klass(courseID, period, room, teacherID);
+                    klassList.add(k);
                     teacherIDListCopy.remove(teacherIDListCopy.indexOf(teacherID));
 
                     if (!roomListCopy.isEmpty()) {
@@ -231,10 +233,41 @@ public class Main {
                     }
 
                 } else {
-                    courseIDListCopy = new ArrayList<>(courseIDList);
+                    if (teacherIDListCopy.isEmpty()) {
+                        ArrayList<Integer> teacherIDListCopy1 = new ArrayList<>(teacherIDList);
+                    }
+                    teacherID = teacherIDListCopy.get((int) (Math.random() * teacherIDListCopy.size()));// random teach
 
+                    boolean foundteacherID = false;
+                    while (!foundteacherID) {
+                        for (Klass x : klassList) {
+                            if (x.getTeacher() == teacherID) {
+                                if (x.getPeriod() == period) {
+                                    teacherID = teacherIDListCopy.get((int) (Math.random() * teacherIDListCopy.size()));// random
+                                                                                                                        // teach
+                                } else {
+                                    foundteacherID = true;
+                                }
+                            }
+                        }
+                    }
+
+                    courseID = q;
+
+                    room = roomListCopy.get((int) (Math.random() * roomListCopy.size())); // random room
+
+                    Klass k = new Klass(courseID, period, room, teacherID);
+
+                    teacherIDListCopy.remove(teacherIDListCopy.indexOf(teacherID));
+
+                    if (!roomListCopy.isEmpty()) {
+
+                        roomListCopy.remove(roomListCopy.indexOf(room));
+
+                    } else {
+                        roomListCopy = new ArrayList<>(roomList);
+                    }
                 }
-
             }
         }
 
