@@ -192,7 +192,7 @@ public class Main {
     }
 
     public void Assignment(ArrayList<Assignment> AssignmentList) throws FileNotFoundException {
-
+        
 
     }
 
@@ -276,7 +276,6 @@ public class Main {
                     }
                 }
             }
-                return ClassList;
         }
         return ClassList;
     }
