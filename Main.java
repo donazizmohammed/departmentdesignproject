@@ -21,6 +21,8 @@ public class Main {
         ArrayList<String> differentRooms = new ArrayList<>(); // Arraylist to store all rooms
         ArrayList<Department> departmentList = new ArrayList<>(); // Arraylist to store all departments
         ArrayList<Enrollment> enrollmentList = new ArrayList<>(); // you get it by now
+        ArrayList<Klass> ClassList = new ArrayList<>();
+
 
         try {
 
@@ -30,7 +32,8 @@ public class Main {
             x.courses(courseList);
             x.rooms(differentRooms);
             x.department(departmentList);
-            x.enrolls(enrollmentList);
+            x.Class(ClassList);
+            x.enrolls(enrollmentList, ClassList); //need to fix enroll to take in two lists
 
         } catch (FileNotFoundException e) {
             System.err.println("File not found" + e.getLocalizedMessage() + "gl");
@@ -70,9 +73,7 @@ public class Main {
         }
     }
 
-    public ArrayList<Enrollment> enrolls(ArrayList<Enrollment> EnrollmentList) throws FileNotFoundException{
-        ArrayList<Klass> listOfClasses = new ArrayList<>();
-        Class(listOfClasses);
+    public ArrayList<Enrollment> enrolls(ArrayList<Enrollment> EnrollmentList , ArrayList<Klass> listOfClasses) throws FileNotFoundException{
         HashMap<Integer, ArrayList<Integer>> klassMap = new HashMap<>();
         for (int z = 0; z < listOfClasses.size(); z++) {
             int period = listOfClasses.get(z).getPeriod();
@@ -192,11 +193,15 @@ public class Main {
     }
 
     public void Assignment(ArrayList<Assignment> AssignmentList) throws FileNotFoundException {
-        
+        int totalclasses = 1; //idk yet
+        for (int i = 1; i <= totalclasses; i++) {
+            String assignmentname = "Assignment" + i;
+            System.out.println("INSERT INTO ASSIGNMENT (AssignmentName, AssignmentType, CourseID) VALUES ('" + assignmentname + "', 1, " + i + ");");
+        }
 
     }
 
-    public ArrayList<Klass> Class(ArrayList<Klass> ClassList) throws FileNotFoundException {
+    public void Class(ArrayList<Klass> ClassList) throws FileNotFoundException {
         ArrayList<Integer> teacherIDList = new ArrayList<>();
         ArrayList<Integer> courseIDList = new ArrayList<>();
         ArrayList<String> roomList = new ArrayList<>();
@@ -277,7 +282,6 @@ public class Main {
                 }
             }
         }
-        return ClassList;
     }
 
     public static void dropALL() {
