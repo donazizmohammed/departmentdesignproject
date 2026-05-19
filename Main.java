@@ -71,11 +71,11 @@ public class Main {
     }
 
     public ArrayList<Enrollment> enrolls(ArrayList<Enrollment> EnrollmentList) throws FileNotFoundException{
-        ArrayList<Klass> sigma = new ArrayList<>();
-        Class(sigma);
+        ArrayList<Klass> listOfClasses = new ArrayList<>();
+        Class(listOfClasses);
         HashMap<Integer, ArrayList<Integer>> klassMap = new HashMap<>();
-        for (int z = 0; z < sigma.size(); z++) {
-            int period = sigma.get(z).getPeriod();
+        for (int z = 0; z < listOfClasses.size(); z++) {
+            int period = listOfClasses.get(z).getPeriod();
             if (!klassMap.containsKey(period)) klassMap.put(period, new ArrayList<>());
             klassMap.get(period).add(z+1);
         }
