@@ -191,14 +191,17 @@ public class Main {
         }
     }
 
+    public void Assignment(ArrayList<Assignment> AssignmentList) throws FileNotFoundException {
+
+
+    }
+
     public ArrayList<Klass> Class(ArrayList<Klass> ClassList) throws FileNotFoundException {
         ArrayList<Integer> teacherIDList = new ArrayList<>();
         ArrayList<Integer> courseIDList = new ArrayList<>();
         ArrayList<String> roomList = new ArrayList<>();
 
         rooms(roomList);
-        ArrayList<ArrayList<Integer>> teacherList = new ArrayList<>(); // to store the teacherID and the period they're
-                                                                       // occupied
         for (int i = 1; i <= 301; i++) {
             teacherIDList.add(i);
         }
@@ -206,7 +209,6 @@ public class Main {
             courseIDList.add(i);
         }
         ArrayList<Integer> teacherIDListCopy = new ArrayList<>(teacherIDList);
-        ArrayList<Integer> courseIDListCopy = new ArrayList<>(courseIDList);
         ArrayList<String> roomListCopy = new ArrayList<>(roomList);
         // coursetimes to determine how many classes this course will be taught (has to
         // be 1-5)
@@ -238,7 +240,7 @@ public class Main {
 
                 } else {
                     if (teacherIDListCopy.isEmpty()) {
-                        ArrayList<Integer> teacherIDListCopy1 = new ArrayList<>(teacherIDList);
+                        teacherIDListCopy = new ArrayList<>(teacherIDList);
                     }
                     teacherID = teacherIDListCopy.get((int) (Math.random() * teacherIDListCopy.size()));// random teach
 
@@ -261,6 +263,7 @@ public class Main {
                     room = roomListCopy.get((int) (Math.random() * roomListCopy.size())); // random room
 
                     Klass k = new Klass(courseID, period, room, teacherID);
+                     ClassList.add(k);
 
                     teacherIDListCopy.remove(teacherIDListCopy.indexOf(teacherID));
 
@@ -277,4 +280,34 @@ public class Main {
         }
         return ClassList;
     }
+
+    public static void dropALL() {
+        System.out.println("DROP TABLE IF EXISTS Grade;");
+        System.out.println("DROP TABLE IF EXISTS Enrollment;");
+        System.out.println("DROP TABLE IF EXISTS Assignment;");
+        System.out.println("DROP TABLE IF EXISTS AssignmentType;");
+        System.out.println("DROP TABLE IF EXISTS Class;");
+        System.out.println("DROP TABLE IF EXISTS Student;");
+        System.out.println("DROP TABLE IF EXISTS Teacher;");
+        System.out.println("DROP TABLE IF EXISTS Course;");
+        System.out.println("DROP TABLE IF EXISTS Department;");
+        System.out.println("DROP TABLE IF EXISTS CourseType;");
+    }
+
+    public static void populateCourseType(){
+        System.out.println("INSERT INTO CourseType (TypeID, TypeName) VALUES ('Elective');");
+        System.out.println("INSERT INTO CourseType (TypeID, TypeName) VALUES ('Regents')");
+        System.out.println("INSERT INTO CourseType (TypeID, TypeName) VALUES ('AP')");
+    }
+
+    public static void populateAssignmentType() {
+        System.out.println("INSERT INTO AssignmentType (AssignmentTypeID, AssignmentName) VALUES ('Minor');");
+        System.out.println("INSERT INTO AssignmentType (AssignmentTypeID, AssignmentName) VALUES ('Major');");
+    }
+
+    
+
+
+
+
 }
