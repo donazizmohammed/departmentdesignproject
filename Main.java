@@ -70,7 +70,7 @@ public class Main {
         }
     }
 
-    public ArrayList<Enrollment> enrolls(ArrayList<Enrollment> y) throws FileNotFoundException{
+    public ArrayList<Enrollment> enrolls(ArrayList<Enrollment> EnrollmentList) throws FileNotFoundException{
         ArrayList<Klass> sigma = new ArrayList<>();
         Class(sigma);
         HashMap<Integer, ArrayList<Integer>> klassMap = new HashMap<>();
@@ -84,11 +84,11 @@ public class Main {
             int studentID = p + 1;
             for (int period = 1; period < 11; period++){
                 ArrayList<Integer> periodClasses = klassMap.get(period);
-                y.add(new Enrollment(periodClasses.get((int) (Math.random() * periodClasses.size())), studentID));
+                EnrollmentList.add(new Enrollment(periodClasses.get((int) (Math.random() * periodClasses.size())), studentID));
             }
 
         }  
-        return y;
+        return EnrollmentList;
     }
 
     public void teachers(ArrayList<Teacher> teacherList) throws FileNotFoundException {
@@ -191,7 +191,7 @@ public class Main {
         }
     }
 
-    public ArrayList<Klass> Class(ArrayList<Klass> skibidi) throws FileNotFoundException {
+    public ArrayList<Klass> Class(ArrayList<Klass> ClassList) throws FileNotFoundException {
         ArrayList<Integer> teacherIDList = new ArrayList<>();
         ArrayList<Integer> courseIDList = new ArrayList<>();
         ArrayList<String> roomList = new ArrayList<>();
@@ -225,7 +225,7 @@ public class Main {
                     room = roomListCopy.get((int) (Math.random() * roomListCopy.size())); // random room
 
                     Klass k = new Klass(courseID, period, room, teacherID);
-                    skibidi.add(k);
+                    ClassList.add(k);
                     teacherIDListCopy.remove(teacherIDListCopy.indexOf(teacherID));
 
                     if (!roomListCopy.isEmpty()) {
@@ -244,7 +244,7 @@ public class Main {
 
                     boolean foundteacherID = false;
                     while (!foundteacherID) {
-                        for (Klass x : skibidi) {
+                        for (Klass x : ClassList) {
                             if (x.getTeacher() == teacherID) {
                                 if (x.getPeriod() == period) {
                                     teacherID = teacherIDListCopy.get((int) (Math.random() * teacherIDListCopy.size()));// random
@@ -273,8 +273,8 @@ public class Main {
                     }
                 }
             }
-                return skibidi;
+                return ClassList;
         }
-        return skibidi;
+        return ClassList;
     }
 }
