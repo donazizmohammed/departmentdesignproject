@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.HashMap;
 
 public class Main {
 
@@ -55,6 +56,7 @@ public class Main {
     // 90% chance this doesnt work but its a start
 
     public void names(ArrayList<Student> studentList) throws FileNotFoundException {
+        
         File input = new File("students.txt");
         try (Scanner scan = new Scanner(input)) {
             while (scan.hasNextLine()) {
@@ -68,21 +70,24 @@ public class Main {
         }
     }
 
-    public ArrayList<Enrollment> enrolls(ArrayList<Enrollment> y) {
-        ArrayList<Integer> courseIDList = new ArrayList<>();
-        ArrayList<Integer> studentIDList = new ArrayList<>();
-        for (int i = 1; i <= 5000; i++) {
-            studentIDList.add(i);
+    public ArrayList<Enrollment> enrolls(ArrayList<Enrollment> y) throws FileNotFoundException{
+        ArrayList<Klass> sigma = new ArrayList<>();
+        Class(sigma);
+        HashMap<Integer, ArrayList<Integer>> klassMap = new HashMap<>();
+        for (int z = 0; z < sigma.size(); z++) {
+            int period = sigma.get(z).getPeriod();
+            if (!klassMap.containsKey(period)) klassMap.put(period, new ArrayList<>());
+            klassMap.get(period).add(z+1);
         }
-        for (int i = 1; i <= 92; i++) {
-            courseIDList.add(i);
-        }
-        for (Integer course : courseIDList) {
-            int x = (int) (Math.random() * 10) + 20; // amount of students
-            for (int i = 0; i <= x; i++) {
-                y.add(new Enrollment(course, studentIDList.get((int) (Math.random() * studentIDList.size()))));
+        
+        for (int p = 0; p < 5000; p++) {
+            int studentID = p + 1;
+            for (int period = 1; period < 11; period++){
+                ArrayList<Integer> periodClasses = klassMap.get(period);
+                y.add(new Enrollment(periodClasses.get((int) (Math.random() * periodClasses.size())), studentID));
             }
-        }
+
+        }  
         return y;
     }
 
@@ -186,11 +191,10 @@ public class Main {
         }
     }
 
-    public void Class() throws FileNotFoundException {
+    public ArrayList<Klass> Class(ArrayList<Klass> skibidi) throws FileNotFoundException {
         ArrayList<Integer> teacherIDList = new ArrayList<>();
         ArrayList<Integer> courseIDList = new ArrayList<>();
         ArrayList<String> roomList = new ArrayList<>();
-        ArrayList<Klass> klassList = new ArrayList<>();
 
         rooms(roomList);
         ArrayList<ArrayList<Integer>> teacherList = new ArrayList<>(); // to store the teacherID and the period they're
@@ -221,7 +225,7 @@ public class Main {
                     room = roomListCopy.get((int) (Math.random() * roomListCopy.size())); // random room
 
                     Klass k = new Klass(courseID, period, room, teacherID);
-                    klassList.add(k);
+                    skibidi.add(k);
                     teacherIDListCopy.remove(teacherIDListCopy.indexOf(teacherID));
 
                     if (!roomListCopy.isEmpty()) {
@@ -240,7 +244,7 @@ public class Main {
 
                     boolean foundteacherID = false;
                     while (!foundteacherID) {
-                        for (Klass x : klassList) {
+                        for (Klass x : skibidi) {
                             if (x.getTeacher() == teacherID) {
                                 if (x.getPeriod() == period) {
                                     teacherID = teacherIDListCopy.get((int) (Math.random() * teacherIDListCopy.size()));// random
@@ -251,7 +255,7 @@ public class Main {
                             }
                         }
                     }
-
+                    
                     courseID = q;
 
                     room = roomListCopy.get((int) (Math.random() * roomListCopy.size())); // random room
@@ -269,8 +273,8 @@ public class Main {
                     }
                 }
             }
+                return skibidi;
         }
-
+        return skibidi;
     }
-
 }
