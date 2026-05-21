@@ -192,11 +192,19 @@ public class Main {
         }
     }
 
-    public void Assignment(ArrayList<Assignment> AssignmentList) throws FileNotFoundException {
-        int totalclasses = 1; //idk yet
+    public void Assignment(ArrayList<Assignment> AssignmentList, ArrayList<Klass> listOfClasses) throws FileNotFoundException {
+        int totalclasses = listOfClasses.size(); //idk yet
         for (int i = 1; i <= totalclasses; i++) {
-            String assignmentname = "Assignment" + i;
-            System.out.println("INSERT INTO ASSIGNMENT (AssignmentName, AssignmentType, CourseID) VALUES ('" + assignmentname + "', 1, " + i + ");");
+            for (int z = 1; z <= 12; z++) {
+                String assignmentname = "Assignment" + z;
+                Assignment k = new Assignment(assignmentname, 1, i);
+                AssignmentList.add(k);
+            }
+            for (int y = 1; y <= 3; y++) {
+                String Testname = "Test" + y;
+                Assignment k = new Assignment(Testname, 2, i);
+                AssignmentList.add(k);
+            }
         }
 
     }
