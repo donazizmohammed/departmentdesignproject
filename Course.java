@@ -1,6 +1,7 @@
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Course {
@@ -44,28 +45,30 @@ public class Course {
         return "INSERT INTO Courses (Name, TypeID) VALUES (" + name + ", " + typeID + ");";
     }
     
-    public void courseInserts() throws FileNotFoundException {
+    public static ArrayList<Course> populateCourses(ArrayList<Course> courseList) throws FileNotFoundException {
+        int y = -1;
         File input = new File("courses.txt");
         try (Scanner scan = new Scanner(input)) {
             while (scan.hasNextLine()) {
+
                 String line = scan.nextLine();
                 String[] parts = line.split("\\|", 2);
-                parts[0] = parts[0].substring(0, parts[0].length() - 1);
-                System.out.println("INSERT INTO Courses (Name, Type) VALUES ('" + parts[0] + "', '" + parts[1] + "');");
-
+                String type = parts[1].trim();
+                if (type.equals("AP")) {
+                    y = 1;
+                }
+                if (type.equals("Elective")) {
+                    y = 2;
+                }
+                if (type.equals("Regents")) {
+                    y = 3;
+                }
+                Course c = new Course(parts[0], y);
+                courseList.add(c);
             }
-        }
-    }
 
-//    public static void main(String[] args) {
-//
-//        try {
-//            Course course = new Course();
-//            course.courseInserts();
-//        } catch (FileNotFoundException e) {
-//            System.err.println("File not found" + e.getLocalizedMessage() + "gl");
-//        }
-//
-//    }
+        }
+        return courseList;
+    }
 
 }

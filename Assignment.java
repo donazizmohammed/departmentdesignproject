@@ -1,3 +1,6 @@
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+
 public class Assignment {
     private static int count = 1;
     private int assignmentID;
@@ -47,5 +50,22 @@ public class Assignment {
 
     public void setAssignmentID(int assignmentID) {
         this.assignmentID = assignmentID;
+    }
+
+    public static ArrayList<Assignment> populateAssignment(ArrayList<Assignment> assignmentList, ArrayList<Course> courseList) throws FileNotFoundException {
+        int totalclasses = courseList.size(); //idk yet
+        for (int i = 1; i <= totalclasses; i++) {
+            for (int z = 1; z <= 12; z++) {
+                String assignmentname = "Assignment" + z;
+                Assignment k = new Assignment(assignmentname, 1, i);
+                assignmentList.add(k);
+            }
+            for (int y = 1; y <= 3; y++) {
+                String Testname = "Test" + y;
+                Assignment k = new Assignment(Testname, 2, i);
+                assignmentList.add(k);
+            }
+        }
+        return assignmentList;
     }
 }
