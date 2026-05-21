@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Enrollment {
@@ -33,41 +34,24 @@ public class Enrollment {
         return "INSERT INTO Enrollment (classID, studentID) VALUES (" + classID + ", " + studentID + ");";
     }
 
-
-    
-    public void roomandteachInserts() throws FileNotFoundException {
-        //list of valid rooms when room is picked for period remove it from the list
-
-        ArrayList<String> data = new ArrayList<>();
-        File input = new File("rooms.txt");
-        try (Scanner scan = new Scanner(input)) {
-            while (scan.hasNextLine()) {
-                String line = scan.nextLine();
-                data.add(line);
-            }
-            ArrayList<Integer> validTeachers = new ArrayList<>();
-            for (Integer i = 0; i <= 301; i++) {
-                validTeachers.add(i);
-            }
-            ArrayList<String> validRooms = new ArrayList<>(data);
-
-            // the idea for the for loop is that this needs to be done for each period
-            for (int period = 0; period <= 10; period++) {
-                String room = validRooms.get((int) (Math.random()));  // get a random room random teacher checkj if they are occupied if not wirte the instert should be that hard :)
-                Integer teach = (int) (Math.random() * 301) + 1; // get random teacherid
-                if (!validRooms.contains(room) && !validTeachers.contains(teach)) {
-                    System.out.println("Insert INTO Enrollment (Room, Teacherid) Values ('" + room + "', '" + teach + "');");
-                }
-            }
+    public static ArrayList<Enrollment> studentEnrolling(ArrayList<Enrollment> enrollmentList , ArrayList<Klass> listOfClasses) throws FileNotFoundException{
+        HashMap<Integer, ArrayList<Integer>> klassMap = new HashMap<>();
+        for (int z = 0; z < listOfClasses.size(); z++) {
+            int period = listOfClasses.get(z).getPeriod();
+            if (!klassMap.containsKey(period)) klassMap.put(period, new ArrayList<>());
+            klassMap.get(period).add(z+1);
         }
+        
+        for (int p = 0; p < 5000; p++) {
+            int studentID = p + 1;
+            for (int period = 1; period < 11; period++){
+                ArrayList<Integer> periodClasses = klassMap.get(period);
+                enrollmentList.add(new Enrollment(periodClasses.get((int) (Math.random() * periodClasses.size())), studentID));
+            }
+
+        }  
+        return enrollmentList;
     }
-//    public static void main(String[] args) {
-//        try {
-//            Enrollment x = new Enrollment();
-//            x.roomandteachInserts();
-//        } catch (FileNotFoundException e) {
-//            System.err.println("File not found" + e.getLocalizedMessage() + "gl");
-//        }
-//
-//    }
+    
+
 }
