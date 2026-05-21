@@ -41,11 +41,11 @@ public class Klass {
         this.room = room;
     }
 
-    public int getteacherID() {
+    public int getTeacherID() {
         return this.teacherID;
     }
 
-    public void setteacherID(int teacherID) {
+    public void setTeacherID(int teacherID) {
         this.teacherID = teacherID;
     }
 
@@ -111,7 +111,7 @@ public class Klass {
                     boolean foundteacherID = false;
                     while (!foundteacherID) {
                         for (Klass x : classList) {
-                            if (x.getTeacher() == teacherID) {
+                            if (x.getTeacherID() == teacherID) {
                                 if (x.getPeriod() == period) {
                                     teacherID = teacherIDListCopy.get((int) (Math.random() * teacherIDListCopy.size()));// random teach
                                 } else {
