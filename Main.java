@@ -22,6 +22,7 @@ public class Main {
         ArrayList<Department> departmentList = new ArrayList<>(); // Arraylist to store all departments
         ArrayList<Enrollment> enrollmentList = new ArrayList<>(); // you get it by now
         ArrayList<Klass> ClassList = new ArrayList<>();
+        ArrayList<Grade> GradeList = new ArrayList<>();
 
 
         try {
@@ -155,7 +156,7 @@ public class Main {
         }
     }
 
-    public void courses(ArrayList<Course> courseList) throws FileNotFoundException {
+    public void populateCourses(ArrayList<Course> courseList) throws FileNotFoundException {
         int y = -1;
         File input = new File("courses.txt");
         try (Scanner scan = new Scanner(input)) {
@@ -180,7 +181,7 @@ public class Main {
         }
     }
 
-    public void rooms(ArrayList<String> differentRooms) throws FileNotFoundException {
+    public void populateRooms(ArrayList<String> differentRooms) throws FileNotFoundException {
         File rooms = new File("rooms.txt");
         try (Scanner roomz = new Scanner(rooms)) {
             while (roomz.hasNextLine()) {
@@ -192,8 +193,8 @@ public class Main {
         }
     }
 
-    public void Assignment(ArrayList<Assignment> AssignmentList, ArrayList<Klass> listOfClasses) throws FileNotFoundException {
-        int totalclasses = listOfClasses.size(); //idk yet
+    public void populateAssignment(ArrayList<Assignment> AssignmentList, ArrayList<Course> courseList) throws FileNotFoundException {
+        int totalclasses = courseList.size(); //idk yet
         for (int i = 1; i <= totalclasses; i++) {
             for (int z = 1; z <= 12; z++) {
                 String assignmentname = "Assignment" + z;
@@ -209,6 +210,25 @@ public class Main {
 
     }
 
+    public void Grades(ArrayList<Grade> GradeList,ArrayList<Klass> ClassList,ArrayList<Enrollment> EnrollmentList,ArrayList<Assignment> AssignmentList) throws FileNotFoundException {
+        for (Enrollment list : EnrollmentList) {
+            int studentID = list.getStudentID();
+            int classID = list.getClassID();
+            int courseID = 0;
+            ArrayList<Integer> assignmentIDs = new ArrayList<>();
+            for (Klass klass : ClassList) {
+                if (klass.getClassID() == classID) {
+                    courseID = klass.getCourseID();
+                }
+            }
+            for (Assignment assi : AssignmentList) {
+                if (courseID = assi.getCourseID()) {
+                    assignmentIDs.add(assi.getAssignmentID());
+                }
+            }
+        }
+    }
+    
     public void Class(ArrayList<Klass> ClassList) throws FileNotFoundException {
         ArrayList<Integer> teacherIDList = new ArrayList<>();
         ArrayList<Integer> courseIDList = new ArrayList<>();
@@ -225,7 +245,7 @@ public class Main {
         ArrayList<String> roomListCopy = new ArrayList<>(roomList);
         // coursetimes to determine how many classes this course will be taught (has to
         // be 1-5)
-        for (int q = 1; q < courseIDList.size(); q++) {
+        for (int q = 1; q <= courseIDList.size(); q++) {
             int coursetimes = (int) (Math.random() * 5) + 1;
             for (int z = 1; z <= coursetimes; z++) {
                 int teacherID = -1;
@@ -306,9 +326,9 @@ public class Main {
     }
 
     public static void populateCourseType(){
+        System.out.println("INSERT INTO CourseType (TypeID, TypeName) VALUES ('AP')");
         System.out.println("INSERT INTO CourseType (TypeID, TypeName) VALUES ('Elective');");
         System.out.println("INSERT INTO CourseType (TypeID, TypeName) VALUES ('Regents')");
-        System.out.println("INSERT INTO CourseType (TypeID, TypeName) VALUES ('AP')");
     }
 
     public static void populateAssignmentType() {
