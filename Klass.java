@@ -4,7 +4,7 @@ public class Klass {
     private int courseID;
     private int period;
     private String room;
-    private int teacher;
+    private int teacherID;
 
     public int getClassID() {
         return this.classID;
@@ -38,24 +38,24 @@ public class Klass {
         this.room = room;
     }
 
-    public int getTeacher() {
-        return this.teacher;
+    public int getteacherID() {
+        return this.teacherID;
     }
 
-    public void setTeacher(int teacher) {
-        this.teacher = teacher;
+    public void setteacherID(int teacherID) {
+        this.teacherID = teacherID;
     }
 
-    public Klass(int courseID, int period, String room, int teacher){
+    public Klass(int courseID, int period, String room, int teacherID){
         classID = count++;
         this.courseID = courseID;
         this.period = period;
         this.room = room;
-        this.teacher = teacher;
+        this.teacherID = teacherID;
     }
 
     @Override
     public String toString(){
-        return "INSERT INTO Class (courseID, period, room, teacher) VALUES ( " + courseID + ", " + period + ", " + room + ", " + teacher + ");";
+        return "INSERT INTO Class (courseID, period, room, teacherID) VALUES ( " + courseID + ", " + period + ", " + room + ", " + teacherID + ");";
     }
 }
