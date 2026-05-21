@@ -59,7 +59,7 @@ public class Main {
     // file
     // 90% chance this doesnt work but its a start
 
-    public void names(ArrayList<Student> studentList) throws FileNotFoundException {
+    public ArrayList<Student> populateStudents(ArrayList<Student> studentList) throws FileNotFoundException {
         
         File input = new File("students.txt");
         try (Scanner scan = new Scanner(input)) {
@@ -72,9 +72,10 @@ public class Main {
         } catch (FileNotFoundException e) {
             System.err.println("File not found" + e.getLocalizedMessage() + "gl");
         }
+        return studentList;
     }
 
-    public ArrayList<Enrollment> enrolls(ArrayList<Enrollment> EnrollmentList , ArrayList<Klass> listOfClasses) throws FileNotFoundException{
+    public static ArrayList<Enrollment> enrolls(ArrayList<Enrollment> EnrollmentList , ArrayList<Klass> listOfClasses) throws FileNotFoundException{
         HashMap<Integer, ArrayList<Integer>> klassMap = new HashMap<>();
         for (int z = 0; z < listOfClasses.size(); z++) {
             int period = listOfClasses.get(z).getPeriod();
@@ -93,7 +94,7 @@ public class Main {
         return EnrollmentList;
     }
 
-    public void teachers(ArrayList<Teacher> teacherList) throws FileNotFoundException {
+    public ArrayList<Teacher> populateTeachers(ArrayList<Teacher> teacherList) throws FileNotFoundException {
         // doesnt work perfectly due to some teachers having middle names but WHO CARES
         // LOL
         File input = new File("teachers.txt");
@@ -143,9 +144,10 @@ public class Main {
                 teacherList.add(teach);
             }
         }
+        return teacherList;
     }
 
-    public void department(ArrayList<Department> departmentList) throws FileNotFoundException {
+    public static ArrayList<Department> department(ArrayList<Department> departmentList) throws FileNotFoundException {
         File input = new File("Department.txt");
         try (Scanner scan = new Scanner(input)) {
             while (scan.hasNextLine()) {
@@ -154,9 +156,10 @@ public class Main {
                 departmentList.add(department);
             }
         }
+        return departmentList;
     }
 
-    public void populateCourses(ArrayList<Course> courseList) throws FileNotFoundException {
+    public static ArrayList<Course> populateCourses(ArrayList<Course> courseList) throws FileNotFoundException {
         int y = -1;
         File input = new File("courses.txt");
         try (Scanner scan = new Scanner(input)) {
@@ -179,6 +182,7 @@ public class Main {
             }
 
         }
+        return courseList;
     }
 
     public void populateRooms(ArrayList<String> differentRooms) throws FileNotFoundException {
@@ -193,7 +197,7 @@ public class Main {
         }
     }
 
-    public void populateAssignment(ArrayList<Assignment> AssignmentList, ArrayList<Course> courseList) throws FileNotFoundException {
+    public static ArrayList<Assignment> populateAssignment(ArrayList<Assignment> AssignmentList, ArrayList<Course> courseList) throws FileNotFoundException {
         int totalclasses = courseList.size(); //idk yet
         for (int i = 1; i <= totalclasses; i++) {
             for (int z = 1; z <= 12; z++) {
@@ -207,10 +211,10 @@ public class Main {
                 AssignmentList.add(k);
             }
         }
-
+        return AssignmentList;
     }
 
-    public void Grades(ArrayList<Grade> GradeList,ArrayList<Klass> ClassList,ArrayList<Enrollment> EnrollmentList,ArrayList<Assignment> AssignmentList) throws FileNotFoundException {
+    public static ArrayList<Grade> populateGrades(ArrayList<Grade> GradeList,ArrayList<Klass> ClassList,ArrayList<Enrollment> EnrollmentList,ArrayList<Assignment> AssignmentList) throws FileNotFoundException {
         for (Enrollment list : EnrollmentList) {
             int studentID = list.getStudentID();
             int classID = list.getClassID();
@@ -222,19 +226,23 @@ public class Main {
                 }
             }
             for (Assignment assi : AssignmentList) {
-                if (courseID = assi.getCourseID()) {
+                if (courseID == assi.getCourseID()) {
                     assignmentIDs.add(assi.getAssignmentID());
                 }
             }
+            for (int assiIDs : assignmentIDs) {
+                int grade = (int) (Math.random() * 26) + 75;
+                Grade k = new Grade(assiIDs, grade, studentID);
+                GradeList.add(k);
+            }
         }
+        return GradeList;
     }
     
-    public void Class(ArrayList<Klass> ClassList) throws FileNotFoundException {
+    public static ArrayList<Klass> populateClass(ArrayList<Klass> ClassList, ArrayList<String> roomList) throws FileNotFoundException {
         ArrayList<Integer> teacherIDList = new ArrayList<>();
         ArrayList<Integer> courseIDList = new ArrayList<>();
-        ArrayList<String> roomList = new ArrayList<>();
 
-        rooms(roomList);
         for (int i = 1; i <= 301; i++) {
             teacherIDList.add(i);
         }
@@ -310,6 +318,7 @@ public class Main {
                 }
             }
         }
+        return ClassList;
     }
 
     public static void dropALL() {
