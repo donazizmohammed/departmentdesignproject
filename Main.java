@@ -101,9 +101,9 @@ public class Main {
     }
 
     public static void populateCourseType(){
-        System.out.println("INSERT INTO CourseType (TypeID, TypeName) VALUES ('AP')");
+        System.out.println("INSERT INTO CourseType (TypeID, TypeName) VALUES ('AP');");
         System.out.println("INSERT INTO CourseType (TypeID, TypeName) VALUES ('Elective');");
-        System.out.println("INSERT INTO CourseType (TypeID, TypeName) VALUES ('Regents')");
+        System.out.println("INSERT INTO CourseType (TypeID, TypeName) VALUES ('Regents');");
     }
 
     public static void populateAssignmentType() {
