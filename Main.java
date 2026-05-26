@@ -107,8 +107,8 @@ public class Main {
     }
 
     public static void populateAssignmentType() {
-        System.out.println("INSERT INTO AssignmentType (AssignmentName) VALUES ('Minor');");
-        System.out.println("INSERT INTO AssignmentType (AssignmentName) VALUES ('Major');");
+        System.out.println("INSERT INTO AssignmentType (AssignmentTypeName) VALUES ('Minor');");
+        System.out.println("INSERT INTO AssignmentType (AssignmentTypeName) VALUES ('Major');");
     }
 
     
