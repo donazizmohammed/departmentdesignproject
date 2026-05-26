@@ -21,36 +21,51 @@ public class Main {
         ArrayList<String> differentRooms = new ArrayList<>(); // Arraylist to store all rooms
         ArrayList<Department> departmentList = new ArrayList<>(); // Arraylist to store all departments
         ArrayList<Enrollment> enrollmentList = new ArrayList<>(); // you get it by now
-        ArrayList<Klass> ClassList = new ArrayList<>();
-        ArrayList<Grade> GradeList = new ArrayList<>();
-
+        ArrayList<Klass> classList = new ArrayList<>();
+        ArrayList<Grade> gradeList = new ArrayList<>();
+        ArrayList<Assignment> assignmentList = new ArrayList<>();
+        
 
         try {
-
             Main x = new Main();
-            x.names(studentList);
-            x.teachers(teacherList);
-            x.courses(courseList);
-            x.rooms(differentRooms);
-            x.department(departmentList);
-            x.Class(ClassList);
-            x.enrolls(enrollmentList, ClassList); //need to fix enroll to take in two lists
+
+            Student.populateStudents(studentList);
+            Teacher.populateTeachers(teacherList);
+            Course.populateCourses(courseList);
+            x.populateRooms(differentRooms);
+            Department.populatedepartment(departmentList);
+            Klass.populateClass(classList, differentRooms);
+            Enrollment.studentEnrolling(enrollmentList, classList); 
+            Assignment.populateAssignment(assignmentList, courseList);
+            Grade.populateGrades(gradeList, classList, enrollmentList, assignmentList);
 
         } catch (FileNotFoundException e) {
             System.err.println("File not found" + e.getLocalizedMessage() + "gl");
         }
-        // for (Course i : courseList){
-        // System.out.println(i);
-        // }
-        // for (Student i : studentList){
-        // System.out.println(i);
-        // }
-        // for (Teacher i : teacherList){
-        // System.out.println(i);
-        // }
-        // for (Department i : departmentList){
-        // System.out.println(i);
-        // }
+        for (Course i : courseList){
+        System.out.println(i);
+        }
+        for (Student i : studentList){
+        System.out.println(i);
+        }
+        for (Teacher i : teacherList){
+        System.out.println(i);
+        }
+        for (Department i : departmentList){
+        System.out.println(i);
+        }
+        for (Klass i : classList){
+        System.out.println(i);
+        }
+        for (Enrollment i : enrollmentList){
+        System.out.println(i);
+        }
+        for (Assignment i : assignmentList){
+        System.out.println(i);
+        }
+        for (Grade i : gradeList){
+        System.out.println(i);
+        }
 
         // Printing for all the tables, toString statements will auto print the INSERT
         // statements

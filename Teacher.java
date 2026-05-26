@@ -56,7 +56,7 @@ public class Teacher {
 
 
 
-    public ArrayList<Teacher> populateTeachers(ArrayList<Teacher> teacherList) throws FileNotFoundException {
+    public static ArrayList<Teacher> populateTeachers(ArrayList<Teacher> teacherList) throws FileNotFoundException {
         // doesnt work perfectly due to some teachers having middle names but WHO CARES
         // LOL
         File input = new File("teachers.txt");
