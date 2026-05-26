@@ -22,7 +22,7 @@ public class Main {
 
         try {
             Main x = new Main();
-            dropALL();
+            TruncateALL();
             populateCourseType();
             populateAssignmentType();
             Student.populateStudents(studentList);
@@ -58,7 +58,7 @@ public class Main {
         }
         for (Assignment i : assignmentList){
         System.out.println(i);
-        }
+       }
         for (Grade i : gradeList){
         System.out.println(i);
         }
@@ -86,17 +86,17 @@ public class Main {
     
     
 
-    public static void dropALL() {
-        System.out.println("DROP TABLE IF EXISTS Grade;");
-        System.out.println("DROP TABLE IF EXISTS Enrollment;");
-        System.out.println("DROP TABLE IF EXISTS Assignment;");
-        System.out.println("DROP TABLE IF EXISTS AssignmentType;");
-        System.out.println("DROP TABLE IF EXISTS Class;");
-        System.out.println("DROP TABLE IF EXISTS Student;");
-        System.out.println("DROP TABLE IF EXISTS Teacher;");
-        System.out.println("DROP TABLE IF EXISTS Course;");
-        System.out.println("DROP TABLE IF EXISTS Department;");
-        System.out.println("DROP TABLE IF EXISTS CourseType;");
+    public static void TruncateALL() {
+        System.out.println("TRUNCATE TABLE Grade;");
+        System.out.println("TRUNCATE TABLE Enrollment;");
+        System.out.println("TRUNCATE TABLE Assignment;");
+        System.out.println("TRUNCATE TABLE AssignmentType;");
+        System.out.println("TRUNCATE TABLE Class;");
+        System.out.println("TRUNCATE TABLE Student;");
+        System.out.println("TRUNCATE TABLE Teacher;");
+        System.out.println("TRUNCATE TABLE Course;");
+        System.out.println("TRUNCATE TABLE Department;");
+        System.out.println("TRUNCATE TABLE CourseType;");
     }
 
     public static void populateCourseType(){
