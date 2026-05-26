@@ -12,7 +12,7 @@ public class MakeTables {
                         "    DepartmentName VARCHAR(255) NOT NULL\r\n" + //
                         ");\r\n" + //
                         "");
-                        
+
         System.out.println("CREATE TABLE Course (\r\n" + //
                         "    CourseID INT AUTO_INCREMENT PRIMARY KEY,\r\n" + //
                         "    Name VARCHAR(255) NOT NULL,\r\n" + //
@@ -59,7 +59,7 @@ public class MakeTables {
 
         System.out.println("CREATE TABLE AssignmentType (\r\n" + //
                         "    AssignmentTypeID INT AUTO_INCREMENT PRIMARY KEY,\r\n" + //
-                        "    TypeName VARCHAR(100) NOT NULL\r\n" + //
+                        "    AssignmentTypeName VARCHAR(100) NOT NULL\r\n" + //
                         ");\r\n" + //
                         "");
 
