@@ -28,7 +28,9 @@ public class Main {
 
         try {
             Main x = new Main();
-
+            x.dropALL();
+            x.populateCourseType();
+            x.populateAssignmentType();
             Student.populateStudents(studentList);
             Teacher.populateTeachers(teacherList);
             Course.populateCourses(courseList);
