@@ -101,14 +101,14 @@ public class Main {
     }
 
     public static void populateCourseType(){
-        System.out.println("INSERT INTO CourseType (TypeID, TypeName) VALUES ('AP');");
-        System.out.println("INSERT INTO CourseType (TypeID, TypeName) VALUES ('Elective');");
-        System.out.println("INSERT INTO CourseType (TypeID, TypeName) VALUES ('Regents');");
+        System.out.println("INSERT INTO CourseType (TypeName) VALUES ('AP');");
+        System.out.println("INSERT INTO CourseType (TypeName) VALUES ('Elective');");
+        System.out.println("INSERT INTO CourseType (TypeName) VALUES ('Regents');");
     }
 
     public static void populateAssignmentType() {
-        System.out.println("INSERT INTO AssignmentType (AssignmentTypeID, AssignmentName) VALUES ('Minor');");
-        System.out.println("INSERT INTO AssignmentType (AssignmentTypeID, AssignmentName) VALUES ('Major');");
+        System.out.println("INSERT INTO AssignmentType (AssignmentName) VALUES ('Minor');");
+        System.out.println("INSERT INTO AssignmentType (AssignmentName) VALUES ('Major');");
     }
 
     
