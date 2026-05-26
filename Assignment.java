@@ -37,7 +37,7 @@ public class Assignment {
         assignmentName = name;
         assignmentTypeID = typeID;
         courseID = cID;
-        assignmentTypeID = count++;
+        assignmentID = count++;
     }
     @Override
     public String toString(){
