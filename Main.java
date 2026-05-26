@@ -8,13 +8,7 @@ import java.util.HashMap;
 public class Main {
 
     public static void main(String[] args) {
-        CourseType elective = new CourseType("Elective"); // CourseType hard code population
-        CourseType regents = new CourseType("Regents");
-        CourseType ap = new CourseType("AP");
-
-        // System.out.println(elective);
-        // System.out.println(regents);
-        // System.out.println(ap);
+ 
         ArrayList<Student> studentList = new ArrayList<>(); // Arraylist to store all students
         ArrayList<Teacher> teacherList = new ArrayList<>(); // Arraylist to store all teachers
         ArrayList<Course> courseList = new ArrayList<>(); // Arratlist to store all courses
@@ -28,9 +22,9 @@ public class Main {
 
         try {
             Main x = new Main();
-            x.dropALL();
-            x.populateCourseType();
-            x.populateAssignmentType();
+            dropALL();
+            populateCourseType();
+            populateAssignmentType();
             Student.populateStudents(studentList);
             Teacher.populateTeachers(teacherList);
             Course.populateCourses(courseList);
