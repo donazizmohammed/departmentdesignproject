@@ -23,6 +23,7 @@ public class Main {
         try {
             Main x = new Main();
             dropALL();
+            MakeTables.makeTables();
             populateCourseType();
             populateAssignmentType();
             Student.populateStudents(studentList);
