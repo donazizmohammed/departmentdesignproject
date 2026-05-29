@@ -38,7 +38,7 @@ public class Department {
     }
     
     public String toString() {
-        return "INSERT INTO Departments (DepartmentName) VALUES ( '" + departmentName + "');";
+        return "INSERT INTO Department (DepartmentName) VALUES ( '" + departmentName + "');";
     }
 
     public static ArrayList<Department> populatedepartment(ArrayList<Department> departmentList) throws FileNotFoundException {
