@@ -41,13 +41,13 @@ public class Main {
         for (Course i : courseList){
         System.out.println(i);
         }
+        for (Department i : departmentList){
+        System.out.println(i);
+        }
         for (Student i : studentList){
         System.out.println(i);
         }
         for (Teacher i : teacherList){
-        System.out.println(i);
-        }
-        for (Department i : departmentList){
         System.out.println(i);
         }
         for (Klass i : classList){
