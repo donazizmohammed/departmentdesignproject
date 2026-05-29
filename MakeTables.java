@@ -13,7 +13,7 @@ public class MakeTables {
                         ");\r\n" + //
                         "");
 
-        System.out.println("CREATE TABLE Course (\r\n" + //
+        System.out.println("CREATE TABLE Courses (\r\n" + //
                         "    CourseID INT AUTO_INCREMENT PRIMARY KEY,\r\n" + //
                         "    Name VARCHAR(255) NOT NULL,\r\n" + //
                         "    TypeID INT,\r\n" + //
