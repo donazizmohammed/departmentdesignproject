@@ -24,12 +24,12 @@ public class Main {
             dropALL();
             MakeTables.makeTables();
             populateCourseType();
+            Course.populateCourses(courseList);
             populateAssignmentType();
+            Department.populatedepartment(departmentList);
             Student.populateStudents(studentList);
             Teacher.populateTeachers(teacherList);
-            Course.populateCourses(courseList);
             x.populateRooms(differentRooms);
-            Department.populatedepartment(departmentList);
             Klass.populateClass(classList, differentRooms);
             Enrollment.studentEnrolling(enrollmentList, classList); 
             Assignment.populateAssignment(assignmentList, courseList);
