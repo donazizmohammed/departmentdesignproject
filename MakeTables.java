@@ -36,7 +36,7 @@ public class MakeTables {
                         "    Period INT,\r\n" + //
                         "    Room VARCHAR(255),\r\n" + //
                         "    TeacherID INT,\r\n" + //
-                        "    FOREIGN KEY (CourseID) REFERENCES Course(CourseID),\r\n" + //
+                        "    FOREIGN KEY (CourseID) REFERENCES Courses(CourseID),\r\n" + //
                         "    FOREIGN KEY (TeacherID) REFERENCES Teacher(TeacherID)\r\n" + //
                         ");\r\n" + //
                         "");
@@ -69,7 +69,7 @@ public class MakeTables {
                         "    AssignmentTypeID INT,\r\n" + //
                         "    CourseID INT,\r\n" + //
                         "    FOREIGN KEY (AssignmentTypeID) REFERENCES AssignmentType(AssignmentTypeID),\r\n" + //
-                        "    FOREIGN KEY (CourseID) REFERENCES Course(CourseID)\r\n" + //
+                        "    FOREIGN KEY (CourseID) REFERENCES Courses(CourseID)\r\n" + //
                         ");\r\n" + //
                         "");
 
