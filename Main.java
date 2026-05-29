@@ -94,7 +94,7 @@ public class Main {
         System.out.println("DROP TABLE IF EXISTS Class;");
         System.out.println("DROP TABLE IF EXISTS Student;");
         System.out.println("DROP TABLE IF EXISTS Teacher;");
-        System.out.println("DROP TABLE IF EXISTS Course;");
+        System.out.println("DROP TABLE IF EXISTS Courses;");
         System.out.println("DROP TABLE IF EXISTS Department;");
         System.out.println("DROP TABLE IF EXISTS CourseType;");
     }
