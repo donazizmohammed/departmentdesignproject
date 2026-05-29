@@ -41,7 +41,7 @@ public class MakeTables {
                         ");\r\n" + //
                         "");
 
-        System.out.println("CREATE TABLE Student (\r\n" + //
+        System.out.println("CREATE TABLE Students (\r\n" + //
                         "    StudentID INT AUTO_INCREMENT PRIMARY KEY,\r\n" + //
                         "    FirstName VARCHAR(255),\r\n" + //
                         "    LastName VARCHAR(255)\r\n" + //
@@ -53,7 +53,7 @@ public class MakeTables {
                         "    StudentID INT,\r\n" + //
                         "    PRIMARY KEY (ClassID, StudentID),\r\n" + //
                         "    FOREIGN KEY (ClassID) REFERENCES Class(ClassID),\r\n" + //
-                        "    FOREIGN KEY (StudentID) REFERENCES Student(StudentID)\r\n" + //
+                        "    FOREIGN KEY (StudentID) REFERENCES Students(StudentID)\r\n" + //
                         ");\r\n" + //
                         "");
 
@@ -79,7 +79,7 @@ public class MakeTables {
                         "    Grade INT,\r\n" + //
                         "    PRIMARY KEY (AssignmentID, StudentID),\r\n" + //
                         "    FOREIGN KEY (AssignmentID) REFERENCES Assignment(AssignmentID),\r\n" + //
-                        "    FOREIGN KEY (StudentID) REFERENCES Student(StudentID)\r\n" + //
+                        "    FOREIGN KEY (StudentID) REFERENCES Students(StudentID)\r\n" + //
                         ");\r\n" + //
                         "");
     }
