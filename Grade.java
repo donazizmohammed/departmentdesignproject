@@ -41,19 +41,13 @@ public class Grade {
         return "INSERT INTO Grade (assignmentID, grade, studentID) VALUES (" + assignmentID + ", " + grade + ", " + studentID   +");";
     }
 
-    public static ArrayList<Grade> populateGrades(ArrayList<Grade> gradeList,ArrayList<Klass> classList,ArrayList<Enrollment> enrollmentList,ArrayList<Assignment> assignmentList) throws FileNotFoundException {
+    public static ArrayList<Grade> populateGrades(ArrayList<Grade> gradeList,ArrayList<Enrollment> enrollmentList,ArrayList<Assignment> assignmentList) throws FileNotFoundException {
         for (Enrollment list : enrollmentList) {
             int studentID = list.getStudentID();
             int classID = list.getClassID();
-            int courseID = 0;
             ArrayList<Integer> assignmentIDs = new ArrayList<>();
-            for (Klass klass : classList) {
-                if (klass.getClassID() == classID) {
-                    courseID = klass.getCourseID();
-                }
-            }
             for (Assignment assi : assignmentList) {
-                if (courseID == assi.getClassID()) {
+                if (classID == assi.getClassID()) {
                     assignmentIDs.add(assi.getAssignmentID());
                 }
             }
