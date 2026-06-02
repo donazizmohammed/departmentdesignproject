@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.HashMap;
 
 public class Main {
 
@@ -26,7 +27,9 @@ public class Main {
             populateAssignmentType();
             Student.populateStudents(studentList);
             Teacher.populateTeachers(teacherList);
+            Course.populateCourses(courseList);
             x.populateRooms(differentRooms);
+            Department.populatedepartment(departmentList);
             Klass.populateClass(classList, differentRooms);
             Enrollment.studentEnrolling(enrollmentList, classList); 
             Assignment.populateAssignment(assignmentList, classList);
@@ -38,13 +41,13 @@ public class Main {
         for (Course i : courseList){
         System.out.println(i);
         }
-        for (Department i : departmentList){
-        System.out.println(i);
-        }
         for (Student i : studentList){
         System.out.println(i);
         }
         for (Teacher i : teacherList){
+        System.out.println(i);
+        }
+        for (Department i : departmentList){
         System.out.println(i);
         }
         for (Klass i : classList){
@@ -83,28 +86,28 @@ public class Main {
     
     
 
-    public static void dropALL() {
-        System.out.println("DROP TABLE IF EXISTS Grade;"); //DELETE * FROM Grade
-        System.out.println("DROP TABLE IF EXISTS Enrollment;");
-        System.out.println("DROP TABLE IF EXISTS Assignment;");
-        System.out.println("DROP TABLE IF EXISTS AssignmentType;");
-        System.out.println("DROP TABLE IF EXISTS Class;");
-        System.out.println("DROP TABLE IF EXISTS Students;");
-        System.out.println("DROP TABLE IF EXISTS Teacher;");
-        System.out.println("DROP TABLE IF EXISTS Courses;");
-        System.out.println("DROP TABLE IF EXISTS Department;");
-        System.out.println("DROP TABLE IF EXISTS CourseType;");
+    public static void TruncateALL() {
+        System.out.println("TRUNCATE TABLE Grade;");
+        System.out.println("TRUNCATE TABLE Enrollment;");
+        System.out.println("TRUNCATE TABLE Assignment;");
+        System.out.println("TRUNCATE TABLE AssignmentType;");
+        System.out.println("TRUNCATE TABLE Class;");
+        System.out.println("TRUNCATE TABLE Student;");
+        System.out.println("TRUNCATE TABLE Teacher;");
+        System.out.println("TRUNCATE TABLE Course;");
+        System.out.println("TRUNCATE TABLE Department;");
+        System.out.println("TRUNCATE TABLE CourseType;");
     }
 
     public static void populateCourseType(){
-        System.out.println("INSERT INTO CourseType (TypeName) VALUES ('AP');");
-        System.out.println("INSERT INTO CourseType (TypeName) VALUES ('Elective');");
-        System.out.println("INSERT INTO CourseType (TypeName) VALUES ('Regents');");
+        System.out.println("INSERT INTO CourseType (TypeID, TypeName) VALUES ('AP')");
+        System.out.println("INSERT INTO CourseType (TypeID, TypeName) VALUES ('Elective');");
+        System.out.println("INSERT INTO CourseType (TypeID, TypeName) VALUES ('Regents')");
     }
 
     public static void populateAssignmentType() {
-        System.out.println("INSERT INTO AssignmentType (TypeName) VALUES ('Minor');");
-        System.out.println("INSERT INTO AssignmentType (TypeName) VALUES ('Major');");
+        System.out.println("INSERT INTO AssignmentType (AssignmentTypeID, AssignmentName) VALUES ('Minor');");
+        System.out.println("INSERT INTO AssignmentType (AssignmentTypeID, AssignmentName) VALUES ('Major');");
     }
 
     
