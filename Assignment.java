@@ -6,7 +6,7 @@ public class Assignment {
     private int assignmentID;
     private String assignmentName;
     private int assignmentTypeID;
-    private int courseID;
+    private int classID;
 
     public String getAssignmentName() {
         return this.assignmentName;
@@ -24,24 +24,24 @@ public class Assignment {
         this.assignmentTypeID = assignmentTypeID;
     }
 
-    public int getCourseID() {
-        return this.courseID;
+    public int getClassID() {
+        return this.classID;
     }
 
     public void setClassID(int classID) {
-        this.courseID = classID;
+        this.classID = classID;
     }
 
 
     public Assignment(String name, int typeID, int cID){
         assignmentName = name;
         assignmentTypeID = typeID;
-        courseID = cID;
+        classID = cID;
         assignmentID = count++;
     }
     @Override
     public String toString(){
-        return "INSERT INTO Assignment ( AssignmentName, AssignmentTypeID, CourseID) VALUES ( '" + assignmentName + "', " + assignmentTypeID + ", " + courseID + ");";
+        return "INSERT INTO Assignment ( AssignmentName, AssignmentTypeID, CourseID) VALUES ( '" + assignmentName + "', " + assignmentTypeID + ", " + classID + ");";
     }
 
     public int getAssignmentID() {

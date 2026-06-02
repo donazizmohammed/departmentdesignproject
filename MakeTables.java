@@ -67,7 +67,7 @@ public class MakeTables {
                         "    AssignmentID INT AUTO_INCREMENT PRIMARY KEY,\r\n" + //
                         "    AssignmentName VARCHAR(255),\r\n" + //
                         "    AssignmentTypeID INT,\r\n" + //
-                        "    CourseID INT,\r\n" + //
+                        "    ClassID INT,\r\n" + //
                         "    FOREIGN KEY (AssignmentTypeID) REFERENCES AssignmentType(AssignmentTypeID),\r\n" + //
                         "    FOREIGN KEY (CourseID) REFERENCES Courses(CourseID)\r\n" + //
                         ");\r\n" + //
