@@ -53,7 +53,7 @@ public class Grade {
                 }
             }
             for (Assignment assi : assignmentList) {
-                if (courseID == assi.getCourseID()) {
+                if (courseID == assi.getClassID()) {
                     assignmentIDs.add(assi.getAssignmentID());
                 }
             }
