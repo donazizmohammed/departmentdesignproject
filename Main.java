@@ -21,18 +21,15 @@ public class Main {
 
         try {
             Main x = new Main();
-            dropALL();
-            MakeTables.makeTables();
+            TruncateALL();
             populateCourseType();
-            Course.populateCourses(courseList);
             populateAssignmentType();
-            Department.populatedepartment(departmentList);
             Student.populateStudents(studentList);
             Teacher.populateTeachers(teacherList);
             x.populateRooms(differentRooms);
             Klass.populateClass(classList, differentRooms);
             Enrollment.studentEnrolling(enrollmentList, classList); 
-            Assignment.populateAssignment(assignmentList, courseList);
+            Assignment.populateAssignment(assignmentList, classList);
             Grade.populateGrades(gradeList, classList, enrollmentList, assignmentList);
 
         } catch (FileNotFoundException e) {
@@ -58,7 +55,7 @@ public class Main {
         }
         for (Assignment i : assignmentList){
         System.out.println(i);
-        }
+       }
         for (Grade i : gradeList){
         System.out.println(i);
         }
