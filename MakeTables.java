@@ -69,7 +69,7 @@ public class MakeTables {
                         "    AssignmentTypeID INT,\r\n" + //
                         "    ClassID INT,\r\n" + //
                         "    FOREIGN KEY (AssignmentTypeID) REFERENCES AssignmentType(AssignmentTypeID),\r\n" + //
-                        "    FOREIGN KEY (CourseID) REFERENCES Courses(CourseID)\r\n" + //
+                        "    FOREIGN KEY (ClassID) REFERENCES Class(ClassID)\r\n" + //
                         ");\r\n" + //
                         "");
 
