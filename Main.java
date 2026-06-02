@@ -33,7 +33,7 @@ public class Main {
             Klass.populateClass(classList, differentRooms);
             Enrollment.studentEnrolling(enrollmentList, classList); 
             Assignment.populateAssignment(assignmentList, classList);
-            Grade.populateGrades(gradeList, classList, enrollmentList, assignmentList);
+            Grade.populateGrades(gradeList, enrollmentList, assignmentList);
 
         } catch (FileNotFoundException e) {
             System.err.println("File not found" + e.getLocalizedMessage() + "gl");
