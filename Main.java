@@ -32,7 +32,7 @@ public class Main {
             x.populateRooms(differentRooms);
             Klass.populateClass(classList, differentRooms);
             Enrollment.studentEnrolling(enrollmentList, classList); 
-            Assignment.populateAssignment(assignmentList, courseList);
+            Assignment.populateAssignment(assignmentList, classList);
             Grade.populateGrades(gradeList, classList, enrollmentList, assignmentList);
 
         } catch (FileNotFoundException e) {
