@@ -41,7 +41,7 @@ public class Assignment {
     }
     @Override
     public String toString(){
-        return "INSERT INTO Assignment ( AssignmentName, AssignmentTypeID, CourseID) VALUES ( '" + assignmentName + "', " + assignmentTypeID + ", " + classID + ");";
+        return "INSERT INTO Assignment ( AssignmentName, AssignmentTypeID, ClassID) VALUES ( '" + assignmentName + "', " + assignmentTypeID + ", " + classID + ");";
     }
 
     public int getAssignmentID() {
