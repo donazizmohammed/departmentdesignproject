@@ -22,7 +22,7 @@ public class Main {
 
         try {
             Main x = new Main();
-            TruncateALL();
+            dropAllTables();
             populateCourseType();
             populateAssignmentType();
             Student.populateStudents(studentList);
@@ -86,17 +86,17 @@ public class Main {
     
     
 
-    public static void TruncateALL() {
-        System.out.println("TRUNCATE TABLE Grade;");
-        System.out.println("TRUNCATE TABLE Enrollment;");
-        System.out.println("TRUNCATE TABLE Assignment;");
-        System.out.println("TRUNCATE TABLE AssignmentType;");
-        System.out.println("TRUNCATE TABLE Class;");
-        System.out.println("TRUNCATE TABLE Student;");
-        System.out.println("TRUNCATE TABLE Teacher;");
-        System.out.println("TRUNCATE TABLE Course;");
-        System.out.println("TRUNCATE TABLE Department;");
-        System.out.println("TRUNCATE TABLE CourseType;");
+    public static void dropAllTables() {
+        System.out.println("DROP TABLE Grade;");
+        System.out.println("DROP TABLE Enrollment;");
+        System.out.println("DROP TABLE Assignment;");
+        System.out.println("DROP TABLE AssignmentType;");
+        System.out.println("DROP TABLE Class;");
+        System.out.println("DROP TABLE Student;");
+        System.out.println("DROP TABLE Teacher;");
+        System.out.println("DROP TABLE Course;");
+        System.out.println("DROP TABLE Department;");
+        System.out.println("DROP TABLE CourseType;");
     }
 
     public static void populateCourseType(){
