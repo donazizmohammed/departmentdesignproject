@@ -13,7 +13,7 @@ Elisa Margarita|Biological Sciences
 Sean McCaffery|Biological Sciences
 Hadi Nasrollahi|Biological Sciences
 Donna Nathan|Biological Sciences
-Iwona O'Brien|Biological Sciences
+Iwona OBrien|Biological Sciences
 Brenda Oquendo-Orna|Biological Sciences
 Caitlin Reste|Biological Sciences
 Jason Sheldon|Biological Sciences
@@ -236,7 +236,7 @@ Victoria Meyer|Social Studies
 Harry Misirlakis|Social Studies
 Amani Mohamed|Social Studies
 Kathleen Nadel|Social Studies
-Michael O’Shea|Social Studies
+Michael OShea|Social Studies
 Jeffrey Park|Social Studies
 Isaiah Pratt|Social Studies
 I Ramnath|Social Studies
