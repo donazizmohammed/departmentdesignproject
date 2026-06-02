@@ -41,7 +41,7 @@ public class Assignment {
     }
     @Override
     public String toString(){
-        return "INSERT INTO Assignment ( AssignmentName, AssignmentTypeID, CourseID) VALUES ( '" + assignmentName + "'', " + assignmentTypeID + ", " + courseID + ");";
+        return "INSERT INTO Assignment ( AssignmentName, AssignmentTypeID, CourseID) VALUES ( '" + assignmentName + "', " + assignmentTypeID + ", " + courseID + ");";
     }
 
     public int getAssignmentID() {
@@ -52,8 +52,8 @@ public class Assignment {
         this.assignmentID = assignmentID;
     }
 
-    public static ArrayList<Assignment> populateAssignment(ArrayList<Assignment> assignmentList, ArrayList<Klass> classList) throws FileNotFoundException {
-        int totalclasses = classList.size(); //idk yet
+    public static ArrayList<Assignment> populateAssignment(ArrayList<Assignment> assignmentList, ArrayList<Course> courseList) throws FileNotFoundException {
+        int totalclasses = courseList.size(); //idk yet
         for (int i = 1; i <= totalclasses; i++) {
             for (int z = 1; z <= 12; z++) {
                 String assignmentname = "Assignment" + z;
