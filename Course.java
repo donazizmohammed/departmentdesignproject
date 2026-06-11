@@ -42,7 +42,7 @@ public class Course {
     }
     @Override
     public String toString() {
-        return "INSERT INTO Courses (Name, TypeID) VALUES ('" + name + "', " + typeID + ");";
+        return "('" + name + "', " + typeID + ")";
     }
     
     public static ArrayList<Course> populateCourses(ArrayList<Course> courseList) throws FileNotFoundException {
