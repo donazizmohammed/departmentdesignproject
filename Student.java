@@ -43,7 +43,7 @@ public class Student {
 
     @Override
     public String toString(){
-        return "INSERT INTO Students (FirstName, LastName) VALUES ('" + firstName + "', '" + lastName + "');";
+        return "('" + firstName + "', '" + lastName + "')";
     }
 
     

@@ -59,7 +59,7 @@ public class Klass {
 
     @Override
     public String toString(){
-        return "INSERT INTO Class (courseID, period, room, teacherID) VALUES ( " + courseID + ", " + period + ", '" + room + "', " + teacherID + ");";
+        return "( " + courseID + ", " + period + ", '" + room + "', " + teacherID + ")";
     }
 
     public static ArrayList<Klass> populateClass(ArrayList<Klass> classList, ArrayList<String> roomList) throws FileNotFoundException {

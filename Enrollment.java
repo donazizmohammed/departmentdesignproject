@@ -31,7 +31,7 @@ public class Enrollment {
 
     @Override
     public String toString() {
-        return "INSERT INTO Enrollment (classID, studentID) VALUES (" + classID + ", " + studentID + ");";
+        return "(" + classID + ", " + studentID + ")";
     }
 
     public static ArrayList<Enrollment> studentEnrolling(ArrayList<Enrollment> enrollmentList , ArrayList<Klass> listOfClasses) throws FileNotFoundException{

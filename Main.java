@@ -38,30 +38,53 @@ public class Main {
         } catch (FileNotFoundException e) {
             System.err.println("File not found" + e.getLocalizedMessage() + "gl");
         }
-        for (Course i : courseList){
-        System.out.println(i);
+        System.out.println("INSERT INTO Courses(name, typeID) VALUES ");
+        for (int i = 0; i < courseList.size() - 1; i ++){
+            System.out.println(i + ",");
         }
-        for (Department i : departmentList){
-        System.out.println(i);
+        System.out.println(courseList.get(courseList.size()-1) + ";");
+
+        System.out.println("INSERT INTO Department (DepartmentName) VALUES ");
+        for (int i = 0; i < departmentListList.size() - 1; i ++){
+            System.out.println(i + ",");
         }
-        for (Student i : studentList){
-        System.out.println(i);
+        System.out.println(departmentList.get(departmentList.size()-1) + ";");
+
+        System.out.println("INSERT INTO Students (FirstName, LastName) VALUES ");
+        for (int i = 0; i < studentList.size() - 1; i ++){
+            System.out.println(i + ",");
         }
-        for (Teacher i : teacherList){
-        System.out.println(i);
+        System.out.println(studentList.get(studentList.size()-1) + ";");
+
+        System.out.println("INSERT INTO Teacher ( FirstName, Lastname, DepartmentID) VALUES ");
+        for (int i = 0; i < teacherList.size() - 1; i ++){
+            System.out.println(i + ",");
         }
-        for (Klass i : classList){
-        System.out.println(i);
+        System.out.println(teacherList.get(teacherList.size()-1) + ";");
+
+        System.out.println("INSERT INTO Class (courseID, period, room, teacherID) VALUES ");
+        for (int i = 0; i < classList.size() - 1; i ++){
+            System.out.println(i + ",");
         }
-        for (Enrollment i : enrollmentList){
-        System.out.println(i);
+        System.out.println(classList.get(classList.size()-1) + ";");
+
+        System.out.println("INSERT INTO Enrollment (classID, studentID) VALUES ");
+        for (int i = 0; i < enrollmentList.size() - 1; i ++){
+            System.out.println(i + ",");
         }
-        for (Assignment i : assignmentList){
-        System.out.println(i);
+        System.out.println(enrollmentList.get(enrollmentList.size()-1) + ";");
+
+      System.out.println("INSERT INTO Assignment ( AssignmentName, AssignmentTypeID, ClassID) VALUES ");
+        for (int i = 0; i < assignmentList.size() - 1; i ++){
+            System.out.println(i + ",");
         }
-        for (Grade i : gradeList){
-        System.out.println(i);
+        System.out.println(assignmentList.get(assignmentList.size()-1) + ";");
+
+        System.out.println("INSERT INTO Grade (assignmentID, grade, studentID) VALUES ");
+        for (int i = 0; i < gradeList.size() - 1; i ++){
+            System.out.println(i + ",");
         }
+        System.out.println(gradeList.get(gradeList.size()-1) + ";");
 
         // Printing for all the tables, toString statements will auto print the INSERT
         // statements

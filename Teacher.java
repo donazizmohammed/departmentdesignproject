@@ -50,7 +50,7 @@ public class Teacher {
     }
     @Override
     public String toString(){
-        return "INSERT INTO Teacher ( FirstName, Lastname, DepartmentID) VALUES ( '" + firstName + "', '" + lastName + "', " + departmentID + ");";
+        return "( '" + firstName + "', '" + lastName + "', " + departmentID + ")";
 
     }
 

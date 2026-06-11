@@ -38,7 +38,7 @@ public class Grade {
 
     @Override
     public String toString() {
-        return "INSERT INTO Grade (assignmentID, grade, studentID) VALUES (" + assignmentID + ", " + grade + ", " + studentID   +");";
+        return "(" + assignmentID + ", " + grade + ", " + studentID   +")";
     }
 
     public static ArrayList<Grade> populateGrades(ArrayList<Grade> gradeList,ArrayList<Enrollment> enrollmentList,ArrayList<Assignment> assignmentList) throws FileNotFoundException {
