@@ -45,7 +45,7 @@ public class Main {
         System.out.println(courseList.get(courseList.size()-1) + ";");
 
         System.out.println("INSERT INTO Department (DepartmentName) VALUES ");
-        for (int i = 0; i < departmentListList.size() - 1; i ++){
+        for (int i = 0; i < departmentList.size() - 1; i ++){
             System.out.println(i + ",");
         }
         System.out.println(departmentList.get(departmentList.size()-1) + ";");
