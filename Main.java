@@ -40,49 +40,49 @@ public class Main {
         }
         System.out.println("INSERT INTO Courses(name, typeID) VALUES ");
         for (int i = 0; i < courseList.size() - 1; i ++){
-            System.out.println(i + ",");
+            System.out.println(courseList.get(i) + ",");
         }
         System.out.println(courseList.get(courseList.size()-1) + ";");
 
         System.out.println("INSERT INTO Department (DepartmentName) VALUES ");
         for (int i = 0; i < departmentList.size() - 1; i ++){
-            System.out.println(i + ",");
+            System.out.println(departmentList.get(i) + ",");
         }
         System.out.println(departmentList.get(departmentList.size()-1) + ";");
 
         System.out.println("INSERT INTO Students (FirstName, LastName) VALUES ");
         for (int i = 0; i < studentList.size() - 1; i ++){
-            System.out.println(i + ",");
+            System.out.println(studentList.get(i) + ",");
         }
         System.out.println(studentList.get(studentList.size()-1) + ";");
 
         System.out.println("INSERT INTO Teacher ( FirstName, Lastname, DepartmentID) VALUES ");
         for (int i = 0; i < teacherList.size() - 1; i ++){
-            System.out.println(i + ",");
+            System.out.println(teacherList.get(i) + ",");
         }
         System.out.println(teacherList.get(teacherList.size()-1) + ";");
 
         System.out.println("INSERT INTO Class (courseID, period, room, teacherID) VALUES ");
         for (int i = 0; i < classList.size() - 1; i ++){
-            System.out.println(i + ",");
+            System.out.println(classList.get(i) + ",");
         }
         System.out.println(classList.get(classList.size()-1) + ";");
 
         System.out.println("INSERT INTO Enrollment (classID, studentID) VALUES ");
         for (int i = 0; i < enrollmentList.size() - 1; i ++){
-            System.out.println(i + ",");
+            System.out.println(enrollmentList.get(i) + ",");
         }
         System.out.println(enrollmentList.get(enrollmentList.size()-1) + ";");
 
       System.out.println("INSERT INTO Assignment ( AssignmentName, AssignmentTypeID, ClassID) VALUES ");
         for (int i = 0; i < assignmentList.size() - 1; i ++){
-            System.out.println(i + ",");
+            System.out.println(assignmentList.get(i) + ",");
         }
         System.out.println(assignmentList.get(assignmentList.size()-1) + ";");
 
         System.out.println("INSERT INTO Grade (assignmentID, grade, studentID) VALUES ");
         for (int i = 0; i < gradeList.size() - 1; i ++){
-            System.out.println(i + ",");
+            System.out.println(gradeList.get(i) + ",");
         }
         System.out.println(gradeList.get(gradeList.size()-1) + ";");
 
